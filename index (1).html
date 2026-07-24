@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les 50 Ruses des Manipulateurs Toxiques — Apprenez à les démasquer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root{
+  --paper:      #FBF9F3;
+  --paper-alt:  #F1EDE2;
+  --card:       #FFFFFF;
+  --ink:        #1E2530;
+  --ink-2:      #333B47;
+  --ink-soft:   #5C6673;
+  --ink-faint:  #9AA1AB;
+  --navy:       #26313F;
+  --brass:      #A87C2E;
+  --brass-deep: #7C5A1E;
+  --brass-pale: #EEE1BE;
+  --wine:       #8C3B3E;
+  --wine-deep:  #6E2C2F;
+  --wine-pale:  #F1DCDA;
+  --line:       rgba(30,37,48,0.14);
+  --line-soft:  rgba(30,37,48,0.08);
+  --shadow-sm:  0 2px 14px rgba(30,37,48,0.06);
+  --shadow-md:  0 16px 38px rgba(30,37,48,0.10);
+  --shadow-lg:  0 32px 68px rgba(30,37,48,0.14);
+  --radius-s:   10px;
+  --radius-m:   18px;
+  --radius-l:   26px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+section{position:relative;}
+
+h1,h2,h3,h4{
+  font-family:'Newsreader',serif;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+  line-height:1.16;
+}
+p{max-width:60ch;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11.5px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--wine-deep);
+  margin-bottom:22px;
+}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--wine);}
+
+/* ---------- ICONS ---------- */
+.icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;display:block;}
+.icon-sm{width:16px;height:16px;}
+.icon-lg{width:30px;height:30px;stroke-width:1.4;}
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:17px 32px;
+  border-radius:100px;
+  font-weight:600;
+  font-size:15.5px;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, background .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--ink);
+  color:var(--paper);
+  box-shadow:0 12px 26px rgba(30,37,48,0.24);
+}
+.btn-primary:hover{transform:translateY(-2px) scale(1.015);box-shadow:0 18px 36px rgba(30,37,48,0.30);}
+.btn-ghost{
+  background:transparent;
+  color:var(--ink);
+  border:1.4px solid var(--line);
+}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(30,37,48,0.03);}
+.btn-block{width:100%;justify-content:center;}
+
+/* ---------- NAV ---------- */
+header.site-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(251,249,243,0.90);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1180px;margin:0 auto;padding:18px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Newsreader',serif;font-size:19px;font-weight:600;}
+.brand .icon{color:var(--wine);}
+.nav-links{display:flex;gap:36px;font-size:14px;font-weight:500;color:var(--ink-soft);}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{display:flex;align-items:center;gap:20px;}
+.nav-price{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);}
+.nav-price strong{color:var(--wine-deep);font-weight:600;}
+@media(max-width:880px){.nav-links{display:none;}}
+
+/* ---------- HERO ---------- */
+.hero{padding:88px 0 60px;overflow:hidden;}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;}
+.hero-copy h1{font-size:clamp(32px,4.2vw,50px);margin-bottom:24px;}
+.hero-copy h1 em{font-style:italic;color:var(--wine-deep);font-weight:500;}
+.hero-copy p.lead{font-size:18px;color:var(--ink-soft);max-width:520px;margin-bottom:36px;}
+.hero-cta-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:32px;}
+.price-tag{display:flex;flex-direction:column;line-height:1.3;}
+.price-tag .old{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-faint);text-decoration:line-through;}
+.price-tag .new{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink);font-weight:600;}
+.hero-trust{display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft);}
+.hero-trust li{display:flex;align-items:center;gap:8px;}
+.hero-trust .icon{color:var(--brass-deep);}
+
+/* hero card-catalog visual */
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:460px;}
+.catalog-box{position:relative;width:340px;height:400px;}
+.fiche-back{
+  position:absolute;width:270px;height:340px;background:var(--card);
+  border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow-md);
+}
+.fiche-back.f1{top:6px;left:0px;transform:rotate(-9deg);opacity:.7;}
+.fiche-back.f2{top:0px;left:34px;transform:rotate(-3deg);opacity:.9;}
+.fiche-main{
+  position:relative;z-index:3;width:270px;left:34px;top:20px;background:var(--card);
+  border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow-lg);
+  padding:26px 24px 24px;transform:rotate(3deg);
+}
+.fiche-main .fm-holes{display:flex;gap:7px;margin-bottom:16px;}
+.fiche-main .fm-holes span{width:6px;height:6px;border-radius:50%;background:var(--line);}
+.fiche-main .fm-num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--brass-deep);font-weight:600;margin-bottom:10px;}
+.fiche-main .fm-icon{width:38px;height:38px;border-radius:50%;background:var(--wine-pale);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.fiche-main h4{font-size:19px;line-height:1.3;margin-bottom:10px;}
+.fiche-main .fm-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--ink-faint);border-top:1px dashed var(--line);padding-top:12px;margin-top:6px;width:100%;}
+.badge-float{position:absolute;top:-10px;right:-22px;z-index:4;background:var(--card);border:1px solid var(--line);border-radius:100px;padding:9px 16px 9px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow-md);font-size:12.5px;font-weight:600;}
+.badge-float .dot{width:8px;height:8px;border-radius:50%;background:var(--wine);}
+.tag-float{position:absolute;bottom:12px;left:-18px;z-index:4;background:var(--navy);color:var(--paper);border-radius:8px;padding:10px 14px;box-shadow:var(--shadow-md);font-family:'IBM Plex Mono',monospace;font-size:11.5px;display:flex;align-items:center;gap:8px;transform:rotate(-4deg);}
+.tag-float .icon{color:var(--brass-pale);}
+@media(max-width:940px){.hero .wrap{grid-template-columns:1fr;}.hero-visual{min-height:360px;order:-1;}}
+
+/* ---------- STAT STRIP (light) ---------- */
+.stat-strip{background:var(--paper-alt);padding:44px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.stat-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.stat-item{text-align:center;}
+.stat-item .num{font-family:'Newsreader',serif;font-size:clamp(28px,3.4vw,38px);color:var(--wine-deep);font-weight:500;}
+.stat-item .lbl{font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft);margin-top:6px;}
+@media(max-width:700px){.stat-strip .wrap{grid-template-columns:repeat(2,1fr);row-gap:30px;}}
+
+/* ---------- SECTION SPACING ---------- */
+.section{padding:112px 0;}
+.section-alt{background:var(--paper-alt);}
+.section-head{max-width:640px;margin-bottom:60px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.section-head.center p{margin-left:auto;margin-right:auto;}
+.section-head h2{font-size:clamp(27px,3.3vw,40px);}
+.section-head p{color:var(--ink-soft);font-size:17px;margin-top:18px;}
+
+/* ---------- PROBLEME ---------- */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.problem-photo{position:relative;border-radius:var(--radius-l);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-lg);}
+.problem-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(0.92);}
+.problem-photo .cap{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(255,255,255,0.94);backdrop-filter:blur(6px);border-radius:var(--radius-s);padding:18px 20px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow-sm);}
+.problem-photo .cap .icon{color:var(--wine);flex:none;margin-top:2px;}
+.problem-photo .cap p{font-size:13.5px;color:var(--ink-soft);}
+.check-list li{display:flex;gap:18px;align-items:flex-start;padding:23px 0;border-bottom:1px solid var(--line);}
+.check-list li:first-child{padding-top:0;}
+.check-list li:last-child{border-bottom:none;}
+.check-list .tick{flex:none;width:30px;height:30px;border-radius:50%;background:var(--wine-pale);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;}
+.check-list p{font-size:16.5px;color:var(--ink);max-width:none;}
+@media(max-width:860px){.problem-grid{grid-template-columns:1fr;gap:44px;}}
+
+/* ---------- COUT ---------- */
+.cost-list{border-top:1px solid var(--line);}
+.cost-row{display:grid;grid-template-columns:56px 1fr 1.6fr;gap:28px;align-items:flex-start;padding:32px 0;border-bottom:1px solid var(--line);}
+.cost-row .ic-wrap{width:44px;height:44px;border-radius:12px;background:var(--brass-pale);color:var(--brass-deep);display:flex;align-items:center;justify-content:center;}
+.cost-row h3{font-size:19px;font-weight:500;}
+.cost-row p{color:var(--ink-soft);font-size:15.5px;}
+@media(max-width:760px){.cost-row{grid-template-columns:44px 1fr;}.cost-row h3{grid-column:2;}.cost-row p{grid-column:2;}}
+
+/* ---------- CATALOGUE / FAMILLES (signature framed section, light) ---------- */
+.dossier-frame{
+  background:var(--card);
+  border:1.4px solid var(--ink);
+  border-radius:var(--radius-l);
+  margin:0 32px;padding:80px 60px;position:relative;
+  background-image:
+    radial-gradient(circle, var(--line-soft) 1px, transparent 1px);
+  background-size:22px 22px;
+  background-position:-10px -10px;
+}
+.dossier-frame::before{
+  content:'DOSSIER Nº50 / EN COURS';
+  position:absolute;top:26px;right:34px;
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--ink-faint);
+}
+.dossier-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
+.dossier-frame h2{font-size:clamp(27px,3.2vw,38px);margin-bottom:20px;}
+.dossier-frame p.lead{color:var(--ink-soft);font-size:16.5px;margin-bottom:14px;max-width:480px;}
+.family-list{display:flex;flex-direction:column;gap:2px;margin-top:8px;}
+.family-row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 20px;border-radius:12px;transition:background .2s ease;}
+.family-row:hover{background:var(--paper-alt);}
+.family-row .fr-icon{width:38px;height:38px;border-radius:10px;background:var(--paper-alt);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;flex:none;}
+.family-row h4{font-size:16px;font-weight:500;font-family:'IBM Plex Sans',sans-serif;color:var(--ink);}
+.family-row span.count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);white-space:nowrap;}
+@media(max-width:940px){.dossier-frame{margin:0 16px;padding:56px 26px;}.dossier-grid{grid-template-columns:1fr;}.dossier-frame::before{display:none;}}
+
+/* ---------- EXTRAIT DU CATALOGUE (fiche gallery) ---------- */
+.fiche-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid var(--line);padding-top:52px;}
+.fiche-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:0;box-shadow:var(--shadow-sm);overflow:hidden;transition:transform .25s ease, box-shadow .25s ease;}
+.fiche-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.fiche-perf{height:16px;background-image:radial-gradient(circle, var(--paper-alt) 3px, transparent 3px);background-size:14px 14px;background-position:4px center;border-bottom:1px dashed var(--line);}
+.fiche-body{padding:26px 24px 28px;}
+.fiche-body .fc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.fiche-body .fc-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-deep);font-weight:600;letter-spacing:.04em;}
+.fiche-body .fc-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.fiche-body h3{font-size:18.5px;margin-bottom:10px;line-height:1.28;}
+.fiche-body p{font-size:14px;color:var(--ink-soft);margin-bottom:16px;}
+.fiche-body .fc-signal{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:14px;}
+.fiche-body .fc-signal .icon{flex:none;color:var(--wine);margin-top:1px;}
+.fiche-body .fc-signal strong{font-weight:600;}
+@media(max-width:900px){.fiche-gallery{grid-template-columns:1fr;}}
+
+/* ---------- TOC ---------- */
+.toc-wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
+.toc-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);padding:14px;box-shadow:var(--shadow-md);}
+.toc-inner{border:1px solid var(--line);border-radius:calc(var(--radius-l) - 10px);padding:46px 42px;}
+.toc-inner .toc-label{font-family:'IBM Plex Mono',monospace;color:var(--wine-deep);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:28px;}
+.toc-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line);}
+.toc-row:last-child{border-bottom:none;}
+.toc-row .tc-num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);flex:none;width:34px;font-weight:600;}
+.toc-row .tc-name{font-size:15.5px;font-weight:500;flex:1;}
+.toc-row .tc-page{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);}
+@media(max-width:860px){.toc-wrap{grid-template-columns:1fr;}}
+
+/* ---------- POUR QUI ---------- */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.who-col{padding:44px 40px;}
+.who-col.yes{border-right:1px solid var(--line);}
+.who-col h3{font-size:19px;margin-bottom:24px;display:flex;align-items:center;gap:10px;font-weight:500;}
+.who-col.yes h3{color:var(--wine-deep);}
+.who-col.no h3{color:var(--ink-soft);}
+.who-col li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;font-size:15px;}
+.who-col .icon{flex:none;margin-top:2px;}
+.who-col.yes .icon{color:var(--wine-deep);}
+.who-col.no .icon{color:var(--ink-faint);}
+.who-note{text-align:center;color:var(--ink-soft);font-size:15px;margin-top:30px;}
+@media(max-width:760px){.who-grid{grid-template-columns:1fr;}.who-col.yes{border-right:none;border-bottom:1px solid var(--line);}}
+
+/* ---------- AUTEURE ---------- */
+.author-wrap{display:grid;grid-template-columns:0.7fr 1.3fr;gap:64px;align-items:center;}
+.author-photo{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow-lg);position:relative;}
+.author-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(0.92);}
+.author-quote{position:absolute;bottom:0;left:0;right:0;padding:26px 22px;background:linear-gradient(0deg, rgba(30,37,48,0.82), transparent);color:#F7F4EC;font-family:'Newsreader',serif;font-style:italic;font-size:14px;}
+.author-copy .sig{font-family:'Newsreader',serif;font-size:17px;color:var(--wine-deep);margin-top:24px;font-style:italic;}
+.credential-row{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap;}
+.credential-row div{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-soft);}
+.credential-row .icon{color:var(--brass-deep);}
+@media(max-width:860px){.author-wrap{grid-template-columns:1fr;}.author-photo{max-width:320px;}}
+
+/* ---------- METHODE ---------- */
+.method-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
+.method-row::before{content:'';position:absolute;top:27px;left:10%;right:10%;height:1px;background:repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 16px);z-index:0;}
+.method-step{position:relative;z-index:1;text-align:center;padding:0 26px;}
+.method-step .m-dot{width:56px;height:56px;border-radius:50%;background:var(--card);border:1.6px solid var(--wine);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:var(--shadow-sm);}
+.method-step h3{font-size:19px;margin-bottom:12px;}
+.method-step p{color:var(--ink-soft);font-size:14.5px;max-width:260px;margin:0 auto;}
+@media(max-width:760px){.method-row{grid-template-columns:1fr;gap:44px;}.method-row::before{display:none;}}
+
+/* ---------- TEMOIGNAGES ---------- */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;border-top:1px solid var(--line);padding-top:48px;}
+.testi-card{display:flex;flex-direction:column;gap:18px;}
+.testi-stars{display:flex;gap:3px;color:var(--brass-deep);}
+.testi-card p.quote{font-size:15.5px;color:var(--ink);font-family:'Newsreader',serif;font-style:italic;line-height:1.6;max-width:none;}
+.testi-person{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:6px;}
+.testi-person img{width:42px;height:42px;border-radius:50%;object-fit:cover;}
+.testi-person .name{font-weight:600;font-size:14px;}
+.testi-person .role{font-size:12.5px;color:var(--ink-faint);}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr;gap:40px;}}
+
+/* ---------- BONUS ---------- */
+.bonus-list{border-top:1px solid var(--line);}
+.bonus-row{display:grid;grid-template-columns:52px 1fr auto;gap:24px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);}
+.bonus-row .ic-wrap{width:44px;height:44px;border-radius:12px;background:var(--wine-pale);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;}
+.bonus-row h3{font-size:17px;margin-bottom:6px;font-weight:500;}
+.bonus-row p{font-size:14.5px;color:var(--ink-soft);}
+.bonus-row .val{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);white-space:nowrap;text-align:right;}
+.bonus-row .val strong{display:block;color:var(--wine-deep);text-decoration:line-through;font-size:13px;}
+@media(max-width:700px){.bonus-row{grid-template-columns:44px 1fr;}.bonus-row .val{grid-column:2;text-align:left;margin-top:6px;}}
+
+/* ---------- AVANT / APRES ---------- */
+.ba-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:var(--radius-m);overflow:hidden;border:1px solid var(--line);}
+.ba-col{padding:48px 44px;background:var(--card);}
+.ba-col.after{background:var(--paper-alt);}
+.ba-col h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;font-weight:600;}
+.ba-col.before h3{color:var(--ink-faint);}
+.ba-col.after h3{color:var(--wine-deep);}
+.ba-col li{display:flex;gap:12px;align-items:flex-start;padding:13px 0;font-size:15px;}
+.ba-col.before li{color:var(--ink-soft);border-bottom:1px solid var(--line-soft);}
+.ba-col.after li{color:var(--ink);border-bottom:1px solid var(--line-soft);}
+.ba-col li:last-child{border-bottom:none;}
+.ba-col .icon{flex:none;margin-top:2px;}
+.ba-col.before .icon{color:var(--ink-faint);}
+.ba-col.after .icon{color:var(--wine-deep);}
+@media(max-width:760px){.ba-wrap{grid-template-columns:1fr;}}
+
+/* ---------- GARANTIE ---------- */
+.guarantee{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);padding:52px 58px;box-shadow:var(--shadow-sm);}
+.seal{width:116px;height:116px;border-radius:50%;background:var(--paper-alt);border:1.4px dashed var(--brass);display:flex;align-items:center;justify-content:center;flex:none;position:relative;}
+.seal .icon{color:var(--brass-deep);width:48px;height:48px;stroke-width:1.3;}
+.guarantee h3{font-size:22px;margin-bottom:12px;}
+.guarantee p{color:var(--ink-soft);font-size:15.5px;max-width:640px;}
+@media(max-width:700px){.guarantee{grid-template-columns:1fr;text-align:center;padding:40px 28px;}.guarantee .seal{margin:0 auto;}}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:780px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 4px;text-align:left;font-size:17px;font-weight:500;font-family:'Newsreader',serif;}
+.faq-q .icon{flex:none;color:var(--wine);transition:transform .3s ease;}
+.faq-item.open .faq-q .icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{padding:0 4px 28px;color:var(--ink-soft);font-size:15px;max-width:680px;}
+.faq-item.open .faq-a{max-height:220px;}
+
+/* ---------- PRICING ---------- */
+.pricing-card{max-width:600px;margin:0 auto;background:var(--card);border:1.6px solid var(--ink);border-radius:var(--radius-l);padding:56px 54px 48px;box-shadow:var(--shadow-lg);position:relative;}
+.pricing-flag{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.05em;padding:8px 20px;border-radius:100px;box-shadow:var(--shadow-sm);}
+.pricing-head{text-align:center;margin-bottom:32px;}
+.pricing-head h3{font-size:22px;margin-bottom:16px;}
+.pricing-price{display:flex;align-items:baseline;justify-content:center;gap:12px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;}
+.pricing-price .old{font-size:17px;color:var(--ink-faint);text-decoration:line-through;}
+.pricing-price .new{font-family:'Newsreader',serif;font-size:44px;color:var(--wine-deep);font-weight:500;}
+.pricing-sub{text-align:center;color:var(--ink-faint);font-size:13px;margin-top:10px;}
+.pricing-list{margin:34px 0;}
+.pricing-list li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;font-size:15px;}
+.pricing-list .icon{color:var(--brass-deep);flex:none;margin-top:2px;}
+.pricing-list li.bonus-line{color:var(--wine-deep);font-weight:600;}
+.pricing-list li.bonus-line .icon{color:var(--wine);}
+.pricing-note{text-align:center;font-size:12.5px;color:var(--ink-faint);margin-top:20px;}
+
+/* ---------- URGENCY BAR ---------- */
+.urgency{display:flex;align-items:center;justify-content:center;gap:14px;background:var(--brass-pale);color:var(--brass-deep);padding:16px;border-radius:100px;max-width:640px;margin:0 auto 54px;font-size:14px;font-weight:600;text-align:center;}
+.urgency .icon{flex:none;}
+
+/* ---------- FINAL CTA (light framed, not dark) ---------- */
+.final-cta{
+  background:var(--card);
+  border:1.4px solid var(--ink);
+  border-radius:var(--radius-l);
+  margin:0 32px;padding:92px 40px;text-align:center;position:relative;overflow:hidden;
+  background-image:radial-gradient(circle, var(--line-soft) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+.final-cta .seal-mini{width:64px;height:64px;border-radius:50%;background:var(--paper-alt);border:1.4px dashed var(--brass);display:flex;align-items:center;justify-content:center;margin:0 auto 26px;position:relative;z-index:1;}
+.final-cta .seal-mini .icon{color:var(--brass-deep);width:28px;height:28px;}
+.final-cta h2{color:var(--ink);font-size:clamp(27px,3.8vw,42px);max-width:760px;margin:0 auto 22px;position:relative;z-index:1;}
+.final-cta p{color:var(--ink-soft);font-size:17px;max-width:520px;margin:0 auto 36px;position:relative;z-index:1;}
+.final-cta .btn-primary{position:relative;z-index:1;}
+
+/* ---------- FOOTER ---------- */
+footer{padding:64px 0 44px;border-top:1px solid var(--line);}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-inner .brand{font-size:17px;}
+.footer-legal{font-size:12.5px;color:var(--ink-faint);}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+@media(max-width:600px){
+  .wrap{padding:0 20px;}
+  .section{padding:76px 0;}
+  .toc-inner{padding:34px 24px;}
+  .guarantee, .pricing-card{padding:36px 26px;}
+  .dossier-frame{padding:48px 22px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ICON LIBRARY -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+  <symbol id="ic-magnifier" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="m20 20-4.6-4.6"/></symbol>
+  <symbol id="ic-fingerprint" viewBox="0 0 24 24"><path d="M12 3c-4 0-7 2.6-7 7v2c0 3.5 1.6 6.5 4 8.5"/><path d="M12 6c-2.6 0-4.5 1.8-4.5 4.3v1.8c0 3 1.3 5.4 3.5 7"/><path d="M12 9.3c-1.3 0-2.2.9-2.2 2.3v1.2c0 2.3 1 4.2 2.7 5.6"/><path d="M15.5 5.2c1.9 1.3 3 3.4 3 5.8v2.2c0 1.6-.3 3-.9 4.2"/><path d="M18.6 3.6C20.7 5.2 22 7.7 22 11v1.6"/></symbol>
+  <symbol id="ic-tag" viewBox="0 0 24 24"><path d="M11.4 3.4 20 12l-8 8-8.6-8.6V4.8A1.4 1.4 0 0 1 4.8 3.4Z"/><circle cx="8.2" cy="8.2" r="1.3" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-folder" viewBox="0 0 24 24"><path d="M3 6.6c0-.9.7-1.6 1.6-1.6h4.6l2 2.4h8.2c.9 0 1.6.7 1.6 1.6V18a1.6 1.6 0 0 1-1.6 1.6H4.6A1.6 1.6 0 0 1 3 18Z"/></symbol>
+  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M10.6 3.9 2.9 18.2c-.5.9.1 2 1.2 2h15.8c1.1 0 1.7-1.1 1.2-2L13.4 3.9c-.5-1-1.9-1-2.8 0Z"/><path d="M12 9.5v4.4M12 17v.1"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><path d="m5 13 5 5L19 7"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.2 3.4 8.7 8 10 4.6-1.3 8-4.8 8-10V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24"><path d="M4 4.6C4 3.7 4.7 3 5.6 3H12v18H5.6A1.6 1.6 0 0 1 4 19.4Z"/><path d="M20 4.6c0-.9-.7-1.6-1.6-1.6H12v18h6.4a1.6 1.6 0 0 0 1.6-1.6Z"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24"><path d="M12 3v13m0 0 4.5-4.5M12 16 7.5 11.5"/><path d="M4 18v1.6A1.4 1.4 0 0 0 5.4 21h13.2a1.4 1.4 0 0 0 1.4-1.4V18"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3.2"/><path d="M2.5 20c0-3.3 2.7-5.6 6-5.6s6 2.3 6 5.6"/><circle cx="17" cy="9" r="2.6"/><path d="M15.6 14.6c2.6.3 4.4 2.3 4.4 5.4"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24"><path d="m12 2.5 2.9 6.3 6.8.7-5.1 4.7 1.4 6.8L12 17.7l-6 3.3 1.4-6.8-5.1-4.7 6.8-.7L12 2.5Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></symbol>
+  <symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="ic-quote" viewBox="0 0 24 24"><path d="M7.5 6.5c-2.4 1-4 3.3-4 6.2 0 2.4 1.5 4 3.4 4 1.7 0 3-1.3 3-3 0-1.6-1.1-2.8-2.6-3 .2-1.6 1.3-2.9 2.7-3.5Z" fill="currentColor" stroke="none"/><path d="M16.5 6.5c-2.4 1-4 3.3-4 6.2 0 2.4 1.5 4 3.4 4 1.7 0 3-1.3 3-3 0-1.6-1.1-2.8-2.6-3 .2-1.6 1.3-2.9 2.7-3.5Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24"><rect x="4.5" y="11" width="15" height="10" rx="2.4"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="ic-brain" viewBox="0 0 24 24"><path d="M9 3a3 3 0 0 0-3 3v1a3 3 0 0 0-2 5 3.2 3.2 0 0 0 2 5.6V19a3 3 0 0 0 3 3"/><path d="M15 3a3 3 0 0 1 3 3v1a3 3 0 0 1 2 5 3.2 3.2 0 0 1-2 5.6V19a3 3 0 0 1-3 3"/><path d="M9 3v18M15 3v18"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.8-4.7-10-9.6C.5 7.4 2.6 4 6.2 4c2.2 0 3.8 1.2 5.8 3.6C14 5.2 15.6 4 17.8 4c3.6 0 5.7 3.4 4.2 6.9-2.2 4.9-10 9.6-10 9.6Z"/></symbol>
+  <symbol id="ic-drop" viewBox="0 0 24 24"><path d="M12 2.5c3 4 7 8.6 7 12.6a7 7 0 0 1-14 0c0-4 4-8.6 7-12.6Z"/></symbol>
+  <symbol id="ic-mute" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m6.5 6.5 11 11"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3.5 7a3.5 3.5 0 0 0 7 0Zm12 0-3.5 7a3.5 3.5 0 0 0 7 0Z"/><path d="M5 21h14M6 7h12"/></symbol>
+</defs>
+</svg>
+
+<!-- ================= NAV ================= -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="brand"><svg class="icon"><use href="#ic-magnifier"/></svg> Le Dossier</div>
+    <nav class="nav-links">
+      <a href="#probleme">Le problème</a>
+      <a href="#catalogue">Le catalogue</a>
+      <a href="#auteure">L'auteure</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-price">Dès <strong>2 999 FCFA</strong></span>
+      <a href="#offre" class="btn btn-primary">Je le veux</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">50 fiches à charge</div>
+      <h1>Les 50 Ruses des Manipulateurs Toxiques <em>: apprenez à les démasquer</em></h1>
+      <p class="lead">Un catalogue clair et méthodique des tactiques de manipulation les plus courantes — pour les reconnaître dès les premiers signaux, comprendre comment elles fonctionnent, et ne plus jamais vous laisser piéger sans le savoir.</p>
+      <div class="hero-cta-row">
+        <a href="#offre" class="btn btn-primary">Consulter le dossier <svg class="icon icon-sm"><use href="#ic-arrow-right"/></svg></a>
+        <div class="price-tag"><span class="old">5 999 FCFA</span><span class="new">2 999 FCFA · Édition de lancement</span></div>
+      </div>
+      <ul class="hero-trust">
+        <li><svg class="icon icon-sm"><use href="#ic-check"/></svg> Format PDF + EPUB</li>
+        <li><svg class="icon icon-sm"><use href="#ic-clock"/></svg> Lecture en 2h30</li>
+        <li><svg class="icon icon-sm"><use href="#ic-download"/></svg> Accès immédiat</li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <div class="catalog-box">
+        <div class="fiche-back f1"></div>
+        <div class="fiche-back f2"></div>
+        <div class="fiche-main">
+          <div class="fm-holes"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="fm-num">RUSE Nº07</div>
+          <div class="fm-icon"><svg class="icon icon-sm"><use href="#ic-heart"/></svg></div>
+          <h4>Le bombardement affectif</h4>
+          <div class="fm-tag"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-tag"/></svg> famille : séduction</div>
+        </div>
+        <div class="badge-float"><span class="dot"></span> +2 400 lectrices &amp; lecteurs</div>
+        <div class="tag-float"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-fingerprint"/></svg> 50 fiches classées</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STAT STRIP ================= -->
+<section class="stat-strip">
+  <div class="wrap">
+    <div class="stat-item"><div class="num">50</div><div class="lbl">ruses répertoriées et expliquées</div></div>
+    <div class="stat-item"><div class="num">5</div><div class="lbl">familles de manipulation</div></div>
+    <div class="stat-item"><div class="num">68</div><div class="lbl">pages, sans blabla</div></div>
+    <div class="stat-item"><div class="num">2h30</div><div class="lbl">pour tout reconnaître</div></div>
+  </div>
+</section>
+
+<!-- ================= LE PROBLEME ================= -->
+<section class="section" id="probleme">
+  <div class="wrap">
+    <div class="problem-grid">
+      <div class="reveal">
+        <div class="problem-photo">
+          <img src="https://images.pexels.com/photos/4467747/pexels-photo-4467747.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Personne pensive, en pleine réflexion">
+          <div class="cap">
+            <svg class="icon icon-sm"><use href="#ic-quote"/></svg>
+            <p>« Je rejouais la scène en boucle, sans réussir à nommer ce qui clochait vraiment. »</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Le problème</div>
+        <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:28px;">Est-ce que cette situation vous parle&nbsp;?</h2>
+        <ul class="check-list">
+          <li><span class="tick"><svg class="icon icon-sm"><use href="#ic-check"/></svg></span><p>Après chaque échange avec cette personne, vous ressortez vidé·e — sans comprendre pourquoi.</p></li>
+          <li><span class="tick"><svg class="icon icon-sm"><use href="#ic-check"/></svg></span><p>Vous doutez de votre mémoire, de votre jugement, de ce que vous avez réellement vécu.</p></li>
+          <li><span class="tick"><svg class="icon icon-sm"><use href="#ic-check"/></svg></span><p>Vous vous surprenez à vous excuser pour des choses que vous n'avez même pas faites.</p></li>
+          <li><span class="tick"><svg class="icon icon-sm"><use href="#ic-check"/></svg></span><p>Une fois la manipulation nommée, vous réalisez qu'elle a un nom — et qu'elle est prévisible.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CE QUE ÇA COUTE ================= -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Ce que ça vous coûte</div>
+      <h2>Sans grille de lecture, chaque ruse continue de fonctionner</h2>
+    </div>
+    <div class="cost-list reveal">
+      <div class="cost-row">
+        <div class="ic-wrap"><svg class="icon"><use href="#ic-alert"/></svg></div>
+        <h3>Rejouer le même scénario</h3>
+        <p>Sans savoir nommer la tactique, on retombe dans le même schéma — avec la même personne, ou une autre.</p>
+      </div>
+      <div class="cost-row">
+        <div class="ic-wrap"><svg class="icon"><use href="#ic-brain"/></svg></div>
+        <h3>Douter de son propre jugement</h3>
+        <p>À force d'être déstabilisé·e sans repère clair, on finit par ne plus faire confiance à ce qu'on ressent.</p>
+      </div>
+      <div class="cost-row">
+        <div class="ic-wrap"><svg class="icon"><use href="#ic-clock"/></svg></div>
+        <h3>Perdre un temps précieux</h3>
+        <p>Plus la ruse reste invisible, plus elle a le temps de s'installer et de coûter cher, émotionnellement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LES 5 FAMILLES (dossier frame, signature) ================= -->
+<section class="section" style="padding-bottom:64px;">
+  <div class="dossier-frame reveal">
+    <div class="dossier-grid">
+      <div>
+        <div class="eyebrow">Le classement</div>
+        <h2>50 ruses, classées en 5 familles</h2>
+        <p class="lead">Chaque ruse est fichée, numérotée et rattachée à une famille de manipulation — pour que vous puissiez la retrouver et la reconnaître en un coup d'œil, quel que soit le contexte.</p>
+        <a href="#catalogue" class="btn btn-ghost">Voir un extrait du catalogue <svg class="icon icon-sm"><use href="#ic-arrow-right"/></svg></a>
+      </div>
+      <div class="family-list">
+        <div class="family-row">
+          <div class="fr-icon"><svg class="icon icon-sm"><use href="#ic-heart"/></svg></div>
+          <h4>Les ruses de séduction</h4>
+          <span class="count mono">Nº01 – 10</span>
+        </div>
+        <div class="family-row">
+          <div class="fr-icon"><svg class="icon icon-sm"><use href="#ic-drop"/></svg></div>
+          <h4>Les ruses de culpabilisation</h4>
+          <span class="count mono">Nº11 – 20</span>
+        </div>
+        <div class="family-row">
+          <div class="fr-icon"><svg class="icon icon-sm"><use href="#ic-lock"/></svg></div>
+          <h4>Les ruses de contrôle</h4>
+          <span class="count mono">Nº21 – 30</span>
+        </div>
+        <div class="family-row">
+          <div class="fr-icon"><svg class="icon icon-sm"><use href="#ic-mute"/></svg></div>
+          <h4>Les ruses de déni et de fuite</h4>
+          <span class="count mono">Nº31 – 40</span>
+        </div>
+        <div class="family-row">
+          <div class="fr-icon"><svg class="icon icon-sm"><use href="#ic-scale"/></svg></div>
+          <h4>Les ruses de position et de victimisation</h4>
+          <span class="count mono">Nº41 – 50</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXTRAIT DU CATALOGUE ================= -->
+<section class="section" id="catalogue">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Extrait du catalogue</div>
+      <h2>Un aperçu de ce que chaque fiche contient</h2>
+      <p>Chaque ruse est présentée de la même façon : son mécanisme, le signal qui la trahit, et la manière d'y répondre.</p>
+    </div>
+    <div class="fiche-gallery reveal">
+      <div class="fiche-card">
+        <div class="fiche-perf"></div>
+        <div class="fiche-body">
+          <div class="fc-top">
+            <span class="fc-num">RUSE Nº03</span>
+            <div class="fc-icon" style="background:var(--wine-pale);color:var(--wine-deep);"><svg class="icon icon-sm"><use href="#ic-heart"/></svg></div>
+          </div>
+          <h3>Le bombardement affectif</h3>
+          <p>Une avalanche d'attentions et de compliments, trop intense et trop rapide pour être anodine.</p>
+          <div class="fc-signal"><svg class="icon icon-sm"><use href="#ic-eye"/></svg><span><strong>Signal :</strong> l'intensité dépasse largement la durée de la relation.</span></div>
+        </div>
+      </div>
+      <div class="fiche-card">
+        <div class="fiche-perf"></div>
+        <div class="fiche-body">
+          <div class="fc-top">
+            <span class="fc-num">RUSE Nº14</span>
+            <div class="fc-icon" style="background:var(--brass-pale);color:var(--brass-deep);"><svg class="icon icon-sm"><use href="#ic-drop"/></svg></div>
+          </div>
+          <h3>Le triangle de culpabilité</h3>
+          <p>Une phrase construite pour que vous vous sentiez responsable d'une situation que vous n'avez pas créée.</p>
+          <div class="fc-signal"><svg class="icon icon-sm"><use href="#ic-eye"/></svg><span><strong>Signal :</strong> vous vous excusez avant même d'avoir compris de quoi.</span></div>
+        </div>
+      </div>
+      <div class="fiche-card">
+        <div class="fiche-perf"></div>
+        <div class="fiche-body">
+          <div class="fc-top">
+            <span class="fc-num">RUSE Nº22</span>
+            <div class="fc-icon" style="background:var(--paper-alt);color:var(--ink-2);"><svg class="icon icon-sm"><use href="#ic-lock"/></svg></div>
+          </div>
+          <h3>Le silence punitif</h3>
+          <p>Un mutisme volontaire utilisé comme sanction, pour forcer l'autre à réparer une faute imaginaire.</p>
+          <div class="fc-signal"><svg class="icon icon-sm"><use href="#ic-eye"/></svg><span><strong>Signal :</strong> le silence dure jusqu'à ce que vous fassiez le premier pas.</span></div>
+        </div>
+      </div>
+      <div class="fiche-card">
+        <div class="fiche-perf"></div>
+        <div class="fiche-body">
+          <div class="fc-top">
+            <span class="fc-num">RUSE Nº31</span>
+            <div class="fc-icon" style="background:var(--wine-pale);color:var(--wine-deep);"><svg class="icon icon-sm"><use href="#ic-mute"/></svg></div>
+          </div>
+          <h3>Le déni systématique</h3>
+          <p>Une négation catégorique de faits pourtant établis, pour vous faire douter de ce que vous avez vu ou entendu.</p>
+          <div class="fc-signal"><svg class="icon icon-sm"><use href="#ic-eye"/></svg><span><strong>Signal :</strong> « ça n'est jamais arrivé » revient, même face à des preuves.</span></div>
+        </div>
+      </div>
+      <div class="fiche-card">
+        <div class="fiche-perf"></div>
+        <div class="fiche-body">
+          <div class="fc-top">
+            <span class="fc-num">RUSE Nº45</span>
+            <div class="fc-icon" style="background:var(--brass-pale);color:var(--brass-deep);"><svg class="icon icon-sm"><use href="#ic-scale"/></svg></div>
+          </div>
+          <h3>La victime parfaite</h3>
+          <p>Un renversement des rôles où l'auteur des faits se présente comme la personne blessée.</p>
+          <div class="fc-signal"><svg class="icon icon-sm"><use href="#ic-eye"/></svg><span><strong>Signal :</strong> vous finissez par consoler la personne qui vous a blessé·e.</span></div>
+        </div>
+      </div>
+      <div class="fiche-card">
+        <div class="fiche-perf"></div>
+        <div class="fiche-body">
+          <div class="fc-top">
+            <span class="fc-num">RUSE Nº38</span>
+            <div class="fc-icon" style="background:var(--paper-alt);color:var(--ink-2);"><svg class="icon icon-sm"><use href="#ic-mute"/></svg></div>
+          </div>
+          <h3>La minimisation</h3>
+          <p>Réduire vos ressentis à une réaction excessive, pour éviter d'avoir à en répondre.</p>
+          <div class="fc-signal"><svg class="icon icon-sm"><use href="#ic-eye"/></svg><span><strong>Signal :</strong> « tu dramatises » remplace systématiquement les excuses.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TABLE DES MATIERES ================= -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="toc-wrap">
+      <div class="reveal">
+        <div class="eyebrow">Sommaire complet</div>
+        <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:22px;">Un classement pensé pour s'y retrouver vite</h2>
+        <p style="color:var(--ink-soft);font-size:16px;margin-bottom:30px;">Chaque chapitre se termine par un exercice pratique, pensé pour être fait en moins de 10 minutes.</p>
+        <a href="#offre" class="btn btn-ghost">Accéder au sommaire complet <svg class="icon icon-sm"><use href="#ic-arrow-right"/></svg></a>
+      </div>
+      <div class="toc-card reveal">
+        <div class="toc-inner">
+          <div class="toc-label">Sommaire</div>
+          <div class="toc-row"><span class="tc-num">01</span><span class="tc-name">Pourquoi une ruse fonctionne toujours au moins une fois</span><span class="tc-page">p. 6</span></div>
+          <div class="toc-row"><span class="tc-num">02</span><span class="tc-name">Les 10 ruses de séduction</span><span class="tc-page">p. 12</span></div>
+          <div class="toc-row"><span class="tc-num">03</span><span class="tc-name">Les 10 ruses de culpabilisation</span><span class="tc-page">p. 22</span></div>
+          <div class="toc-row"><span class="tc-num">04</span><span class="tc-name">Les 10 ruses de contrôle</span><span class="tc-page">p. 32</span></div>
+          <div class="toc-row"><span class="tc-num">05</span><span class="tc-name">Les 10 ruses de déni et de fuite</span><span class="tc-page">p. 42</span></div>
+          <div class="toc-row"><span class="tc-num">06</span><span class="tc-name">Les 10 ruses de position et de victimisation</span><span class="tc-page">p. 52</span></div>
+          <div class="toc-row"><span class="tc-num">07</span><span class="tc-name">Se reconstruire, ne plus se faire piéger</span><span class="tc-page">p. 62</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POUR QUI ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">Est-ce pour vous ?</div>
+      <h2>Un dossier pensé pour tout le monde</h2>
+      <p>Quelle que soit la relation concernée — famille, couple, amitié, travail — les ruses répertoriées restent les mêmes.</p>
+    </div>
+    <div class="who-grid reveal">
+      <div class="who-col yes">
+        <h3><svg class="icon"><use href="#ic-check"/></svg> Ce dossier est pour vous si…</h3>
+        <ul>
+          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous sortez d'une relation difficile, ou vous êtes encore dedans.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous voulez des repères concrets, pas juste de la théorie.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous voulez apprendre à repérer les signaux tôt, la prochaine fois.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous préférez un format classé, direct, consultable en un clin d'œil.</span></li>
+        </ul>
+      </div>
+      <div class="who-col no">
+        <h3><svg class="icon"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg> Ce dossier n'est pas pour vous si…</h3>
+        <ul>
+          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous cherchez un diagnostic médical ou une thérapie de fond.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous voulez un roman ou un témoignage narratif.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous n'êtes pas prêt·e à remettre en question certaines relations.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="who-note reveal">Que vous soyez étudiant·e, parent, salarié·e ou entrepreneur·e — si une relation vous pèse, ce dossier vous concerne.</p>
+  </div>
+</section>
+
+<!-- ================= AUTEURE ================= -->
+<section class="section section-alt" id="auteure">
+  <div class="wrap">
+    <div class="author-wrap">
+      <div class="author-photo reveal">
+        <img src="https://images.pexels.com/photos/3791554/pexels-photo-3791554.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Nadia Kouassi, autrice du dossier">
+        <div class="author-quote">« Une ruse qu'on sait nommer perd la moitié de son pouvoir. »</div>
+      </div>
+      <div class="author-copy reveal">
+        <div class="eyebrow">L'auteure</div>
+        <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:20px;">Nadia Kouassi</h2>
+        <p style="color:var(--ink-soft);font-size:16.5px;">Consultante en relations interpersonnelles, Nadia accompagne depuis huit ans des personnes qui sortent — ou cherchent à sortir — de relations toxiques. Elle a construit ce catalogue comme l'outil qu'elle aurait aimé avoir plus tôt&nbsp;: méthodique, sans détour, avec une fiche claire pour chaque ruse rencontrée sur le terrain.</p>
+        <p class="sig">— Nadia</p>
+        <div class="credential-row">
+          <div><svg class="icon icon-sm"><use href="#ic-shield"/></svg> Consultante certifiée en relations interpersonnelles</div>
+          <div><svg class="icon icon-sm"><use href="#ic-users"/></svg> +2 400 personnes accompagnées</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHODE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">La méthode</div>
+      <h2>Le protocole en trois temps</h2>
+    </div>
+    <div class="method-row reveal">
+      <div class="method-step">
+        <div class="m-dot"><svg class="icon"><use href="#ic-eye"/></svg></div>
+        <h3>Repérer</h3>
+        <p>Identifier la ruse en cours grâce à sa fiche signalétique et au signal qui la trahit.</p>
+      </div>
+      <div class="method-step">
+        <div class="m-dot"><svg class="icon"><use href="#ic-brain"/></svg></div>
+        <h3>Comprendre</h3>
+        <p>Décoder le mécanisme pour ne plus se sentir responsable, ni fautif·ve, ni fou ou folle.</p>
+      </div>
+      <div class="method-step">
+        <div class="m-dot"><svg class="icon"><use href="#ic-target"/></svg></div>
+        <h3>Répondre</h3>
+        <p>Poser une limite claire et durable, avec la réponse suggérée pour chaque fiche.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEMOIGNAGES ================= -->
+<section class="section section-alt" id="avis">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">Ils et elles ont lu</div>
+      <h2>Ce qu'en disent les lecteurs</h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">
+          <svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg>
+        </div>
+        <p class="quote">« La fiche sur le bombardement affectif m'a mis une claque. J'ai enfin compris pourquoi ce début de relation m'avait semblé trop beau pour être vrai. »</p>
+        <div class="testi-person">
+          <img src="https://images.pexels.com/photos/29852896/pexels-photo-29852896.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Aïcha">
+          <div><div class="name">Aïcha, 34 ans</div><div class="role">Lectrice</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg>
+        </div>
+        <p class="quote">« Je pensais que ça parlait uniquement de couple. En fait ça m'a surtout aidé à comprendre ma relation avec mon manager. Classé, précis, sans blabla. »</p>
+        <div class="testi-person">
+          <img src="https://images.pexels.com/photos/6102858/pexels-photo-6102858.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Karim">
+          <div><div class="name">Karim, 41 ans</div><div class="role">Lecteur</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">
+          <svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg>
+        </div>
+        <p class="quote">« Les réponses suggérées, je les ai littéralement recopiées sur un post-it. Ça a changé mes conversations avec ma mère. »</p>
+        <div class="testi-person">
+          <img src="https://images.pexels.com/photos/29540830/pexels-photo-29540830.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Élise">
+          <div><div class="name">Élise, 29 ans</div><div class="role">Lectrice</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BONUS ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">En plus du dossier</div>
+      <h2>3 bonus offerts avec votre exemplaire</h2>
+    </div>
+    <div class="bonus-list reveal">
+      <div class="bonus-row">
+        <div class="ic-wrap"><svg class="icon"><use href="#ic-magnifier"/></svg></div>
+        <div><h3>Le test d'auto-évaluation</h3><p>« Suis-je exposé·e à une ruse en ce moment ? » — un questionnaire pour poser un premier diagnostic clair.</p></div>
+        <div class="val"><strong>1 500 FCFA</strong>Offert</div>
+      </div>
+      <div class="bonus-row">
+        <div class="ic-wrap"><svg class="icon"><use href="#ic-download"/></svg></div>
+        <div><h3>La fiche récapitulative des 50 ruses</h3><p>Un poster imprimable à garder sous la main pour identifier une ruse en un coup d'œil.</p></div>
+        <div class="val"><strong>1 000 FCFA</strong>Offert</div>
+      </div>
+      <div class="bonus-row">
+        <div class="ic-wrap"><svg class="icon"><use href="#ic-folder"/></svg></div>
+        <div><h3>Le classeur de réponses types</h3><p>Des formulations prêtes à l'emploi, une par famille de ruse, pour répondre sans vous justifier.</p></div>
+        <div class="val"><strong>1 000 FCFA</strong>Offert</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVANT / APRES ================= -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">La transformation</div>
+      <h2>Avant / après la lecture</h2>
+    </div>
+    <div class="ba-wrap reveal">
+      <div class="ba-col before">
+        <h3>Avant</h3>
+        <ul>
+          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous doutez de ce que vous ressentez.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous cherchez toujours à comprendre « pourquoi elle agit comme ça ».</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous vous excusez, même quand ce n'est pas votre faute.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous vous sentez seul·e face à la situation.</span></li>
+        </ul>
+      </div>
+      <div class="ba-col after">
+        <h3>Après</h3>
+        <ul>
+          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous identifiez la ruse dès qu'elle se met en place.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous comprenez le mécanisme, sans chercher à l'excuser.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous posez une réponse claire, sans culpabiliser.</span></li>
+          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous avancez avec des repères concrets, à votre rythme.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GARANTIE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="guarantee reveal">
+      <div class="seal"><svg class="icon"><use href="#ic-shield"/></svg></div>
+      <div>
+        <h3>Garantie 30 jours, satisfait ou remboursé</h3>
+        <p>Si ce dossier ne vous apporte pas la clarté promise, écrivez-nous dans les 30 jours suivant votre achat et vous serez intégralement remboursé·e. Sans justification à fournir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section section-alt" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">Questions fréquentes</div>
+      <h2>Vous vous posez peut-être ces questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q"><span>Ce dossier remplace-t-il une thérapie ?</span><svg class="icon"><use href="#ic-plus"/></svg></button>
+        <div class="faq-a"><p>Non. C'est un outil de repérage et de compréhension, pensé pour compléter — jamais remplacer — un accompagnement thérapeutique si vous en ressentez le besoin.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Sous quel format vais-je recevoir le dossier ?</span><svg class="icon"><use href="#ic-plus"/></svg></button>
+        <div class="faq-a"><p>Vous recevez un lien de téléchargement immédiat au format PDF (haute définition) et EPUB, lisible sur ordinateur, tablette, liseuse et téléphone.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Est-ce adapté si la personne toxique est un proche, pas un(e) partenaire ?</span><svg class="icon"><use href="#ic-plus"/></svg></button>
+        <div class="faq-a"><p>Oui. Les 50 ruses s'appliquent aux relations amoureuses, familiales, amicales et professionnelles — chaque fiche propose des exemples variés.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Combien de temps faut-il pour le lire ?</span><svg class="icon"><use href="#ic-plus"/></svg></button>
+        <div class="faq-a"><p>Environ deux heures et demie pour une première lecture complète. La plupart des lecteurs y reviennent ensuite fiche par fiche, selon leurs besoins.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Puis-je être remboursé·e si ça ne me convient pas ?</span><svg class="icon"><use href="#ic-plus"/></svg></button>
+        <div class="faq-a"><p>Oui, vous disposez de 30 jours pour demander un remboursement intégral, sans justification à fournir.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFFRE ================= -->
+<section class="section section-alt" id="offre">
+  <div class="wrap">
+    <div class="urgency reveal">
+      <svg class="icon icon-sm"><use href="#ic-clock"/></svg>
+      Offre de lancement — les 3 bonus sont offerts pour les prochaines lectrices et lecteurs
+    </div>
+    <div class="pricing-card reveal">
+      <div class="pricing-flag">Édition de lancement</div>
+      <div class="pricing-head">
+        <h3>Les 50 Ruses des Manipulateurs Toxiques</h3>
+        <div class="pricing-price"><span class="old">5 999 FCFA</span><span class="new">2 999 FCFA</span></div>
+        <div class="pricing-sub">Paiement unique · accès à vie</div>
+      </div>
+      <ul class="pricing-list">
+        <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Le dossier complet — 50 fiches, 68 pages, formats PDF + EPUB</span></li>
+        <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Mises à jour futures incluses gratuitement</span></li>
+        <li class="bonus-line"><svg class="icon icon-sm"><use href="#ic-folder"/></svg><span>Bonus 1 — Le test d'auto-évaluation</span></li>
+        <li class="bonus-line"><svg class="icon icon-sm"><use href="#ic-folder"/></svg><span>Bonus 2 — La fiche récapitulative des 50 ruses à imprimer</span></li>
+        <li class="bonus-line"><svg class="icon icon-sm"><use href="#ic-folder"/></svg><span>Bonus 3 — Le classeur de réponses types</span></li>
+        <li><svg class="icon icon-sm"><use href="#ic-shield"/></svg><span>Garantie 30 jours satisfait ou remboursé</span></li>
+      </ul>
+      <a href="#" class="btn btn-primary btn-block">Je commande mon exemplaire <svg class="icon icon-sm"><use href="#ic-arrow-right"/></svg></a>
+      <p class="pricing-note">Paiement sécurisé · Accès immédiat après achat</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINALE ================= -->
+<section class="section">
+  <div class="final-cta reveal">
+    <div class="seal-mini"><svg class="icon"><use href="#ic-fingerprint"/></svg></div>
+    <h2>Vous méritez d'y voir clair.</h2>
+    <p>Ne laissez pas une ruse de plus passer inaperçue.</p>
+    <a href="#offre" class="btn btn-primary">Obtenir le dossier maintenant — 2 999 FCFA <svg class="icon icon-sm"><use href="#ic-arrow-right"/></svg></a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="brand"><svg class="icon"><use href="#ic-magnifier"/></svg> Le Dossier</div>
+      <div class="footer-legal">© 2026 Le Dossier Éditions — Tous droits réservés</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:0.12});
+revealEls.forEach(el=>io.observe(el));
+
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
