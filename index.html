@@ -16,6 +16,7 @@
   --ink-soft:   #5C6673;
   --ink-faint:  #9AA1AB;
   --navy:       #26313F;
+  --navy-deep:  #16202B;
   --brass:      #A87C2E;
   --brass-deep: #7C5A1E;
   --brass-pale: #EEE1BE;
@@ -64,7 +65,7 @@ p{max-width:60ch;}
 .eyebrow{
   display:inline-flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
   font-family:'IBM Plex Mono',monospace;
   font-size:11.5px;
   font-weight:600;
@@ -73,7 +74,6 @@ p{max-width:60ch;}
   color:var(--wine-deep);
   margin-bottom:22px;
 }
-.eyebrow::before{content:'';width:20px;height:1px;background:var(--wine);}
 
 /* ---------- ICONS ---------- */
 .icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;display:block;}
@@ -121,13 +121,11 @@ header.site-nav{
 .brand .icon{color:var(--wine);}
 .nav-links{display:flex;gap:36px;font-size:14px;font-weight:500;color:var(--ink-soft);}
 .nav-links a:hover{color:var(--ink);}
-.nav-cta{display:flex;align-items:center;gap:20px;}
-.nav-price{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);}
-.nav-price strong{color:var(--wine-deep);font-weight:600;}
+.nav-cta{display:flex;align-items:center;}
 @media(max-width:880px){.nav-links{display:none;}}
 
 /* ---------- HERO ---------- */
-.hero{padding:88px 0 60px;overflow:hidden;}
+.hero{padding:80px 0 60px;overflow:hidden;}
 .hero .wrap{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;}
 .hero-copy h1{font-size:clamp(32px,4.2vw,50px);margin-bottom:24px;}
 .hero-copy h1 em{font-style:italic;color:var(--wine-deep);font-weight:500;}
@@ -140,38 +138,28 @@ header.site-nav{
 .hero-trust li{display:flex;align-items:center;gap:8px;}
 .hero-trust .icon{color:var(--brass-deep);}
 
-/* hero card-catalog visual */
+/* hero photo visual */
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:460px;}
-.catalog-box{position:relative;width:340px;height:400px;}
-.fiche-back{
-  position:absolute;width:270px;height:340px;background:var(--card);
-  border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow-md);
-}
-.fiche-back.f1{top:6px;left:0px;transform:rotate(-9deg);opacity:.7;}
-.fiche-back.f2{top:0px;left:34px;transform:rotate(-3deg);opacity:.9;}
-.fiche-main{
-  position:relative;z-index:3;width:270px;left:34px;top:20px;background:var(--card);
-  border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow-lg);
-  padding:26px 24px 24px;transform:rotate(3deg);
-}
-.fiche-main .fm-holes{display:flex;gap:7px;margin-bottom:16px;}
-.fiche-main .fm-holes span{width:6px;height:6px;border-radius:50%;background:var(--line);}
-.fiche-main .fm-num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--brass-deep);font-weight:600;margin-bottom:10px;}
-.fiche-main .fm-icon{width:38px;height:38px;border-radius:50%;background:var(--wine-pale);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-.fiche-main h4{font-size:19px;line-height:1.3;margin-bottom:10px;}
-.fiche-main .fm-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--ink-faint);border-top:1px dashed var(--line);padding-top:12px;margin-top:6px;width:100%;}
-.badge-float{position:absolute;top:-10px;right:-22px;z-index:4;background:var(--card);border:1px solid var(--line);border-radius:100px;padding:9px 16px 9px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow-md);font-size:12.5px;font-weight:600;}
+.hero-photo-frame{position:relative;width:100%;max-width:420px;aspect-ratio:4/5;border-radius:var(--radius-l);overflow:hidden;box-shadow:var(--shadow-lg);}
+.hero-photo-frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness(0.92);}
+.hero-photo-frame .tint{position:absolute;inset:0;background:linear-gradient(165deg, rgba(38,49,63,0.42) 0%, rgba(38,49,63,0.08) 55%, rgba(140,59,62,0.22) 100%);mix-blend-mode:multiply;}
+.hero-photo-frame .tint2{position:absolute;inset:0;background:linear-gradient(0deg, rgba(20,25,32,0.55), transparent 45%);}
+.badge-float{position:absolute;top:-14px;right:-18px;z-index:4;background:var(--card);border:1px solid var(--line);border-radius:100px;padding:9px 16px 9px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow-md);font-size:12.5px;font-weight:600;}
 .badge-float .dot{width:8px;height:8px;border-radius:50%;background:var(--wine);}
-.tag-float{position:absolute;bottom:12px;left:-18px;z-index:4;background:var(--navy);color:var(--paper);border-radius:8px;padding:10px 14px;box-shadow:var(--shadow-md);font-family:'IBM Plex Mono',monospace;font-size:11.5px;display:flex;align-items:center;gap:8px;transform:rotate(-4deg);}
-.tag-float .icon{color:var(--brass-pale);}
-@media(max-width:940px){.hero .wrap{grid-template-columns:1fr;}.hero-visual{min-height:360px;order:-1;}}
+.fiche-float{position:absolute;left:-26px;bottom:26px;z-index:4;width:196px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;box-shadow:var(--shadow-lg);}
+.fiche-float .ff-num{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-deep);font-weight:600;letter-spacing:.04em;margin-bottom:8px;}
+.fiche-float .ff-icon{width:32px;height:32px;border-radius:50%;background:var(--wine-pale);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.fiche-float h4{font-size:15.5px;line-height:1.28;margin-bottom:10px;}
+.fiche-float .ff-tag{display:flex;align-items:center;gap:6px;font-size:10.5px;font-family:'IBM Plex Mono',monospace;color:var(--ink-faint);border-top:1px solid var(--line);padding-top:10px;}
+@media(max-width:940px){.hero .wrap{grid-template-columns:1fr;}.hero-visual{min-height:380px;order:-1;}.hero-photo-frame{max-width:320px;}}
 
 /* ---------- STAT STRIP (light) ---------- */
 .stat-strip{background:var(--paper-alt);padding:44px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .stat-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-.stat-item{text-align:center;}
-.stat-item .num{font-family:'Newsreader',serif;font-size:clamp(28px,3.4vw,38px);color:var(--wine-deep);font-weight:500;}
-.stat-item .lbl{font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft);margin-top:6px;}
+.stat-item{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.stat-item .si-icon{width:34px;height:34px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;}
+.stat-item .num{font-family:'Newsreader',serif;font-size:clamp(26px,3.2vw,34px);color:var(--wine-deep);font-weight:500;}
+.stat-item .lbl{font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft);}
 @media(max-width:700px){.stat-strip .wrap{grid-template-columns:repeat(2,1fr);row-gap:30px;}}
 
 /* ---------- SECTION SPACING ---------- */
@@ -205,14 +193,13 @@ header.site-nav{
 .cost-row p{color:var(--ink-soft);font-size:15.5px;}
 @media(max-width:760px){.cost-row{grid-template-columns:44px 1fr;}.cost-row h3{grid-column:2;}.cost-row p{grid-column:2;}}
 
-/* ---------- CATALOGUE / FAMILLES (signature framed section, light) ---------- */
+/* ---------- CATALOGUE / FAMILLES ---------- */
 .dossier-frame{
   background:var(--card);
   border:1.4px solid var(--ink);
   border-radius:var(--radius-l);
   margin:0 32px;padding:80px 60px;position:relative;
-  background-image:
-    radial-gradient(circle, var(--line-soft) 1px, transparent 1px);
+  background-image:radial-gradient(circle, var(--line-soft) 1px, transparent 1px);
   background-size:22px 22px;
   background-position:-10px -10px;
 }
@@ -224,19 +211,42 @@ header.site-nav{
 .dossier-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
 .dossier-frame h2{font-size:clamp(27px,3.2vw,38px);margin-bottom:20px;}
 .dossier-frame p.lead{color:var(--ink-soft);font-size:16.5px;margin-bottom:14px;max-width:480px;}
-.family-list{display:flex;flex-direction:column;gap:2px;margin-top:8px;}
-.family-row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 20px;border-radius:12px;transition:background .2s ease;}
-.family-row:hover{background:var(--paper-alt);}
-.family-row .fr-icon{width:38px;height:38px;border-radius:10px;background:var(--paper-alt);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;flex:none;}
+.family-list{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+.family-row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 20px;border-radius:14px;background:var(--paper-alt);border:1px solid transparent;transition:border-color .2s ease, transform .2s ease;}
+.family-row:hover{border-color:var(--line);transform:translateX(2px);}
+.family-row .fr-icon{width:38px;height:38px;border-radius:10px;background:var(--card);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;flex:none;box-shadow:var(--shadow-sm);}
 .family-row h4{font-size:16px;font-weight:500;font-family:'IBM Plex Sans',sans-serif;color:var(--ink);}
 .family-row span.count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);white-space:nowrap;}
 @media(max-width:940px){.dossier-frame{margin:0 16px;padding:56px 26px;}.dossier-grid{grid-template-columns:1fr;}.dossier-frame::before{display:none;}}
 
-/* ---------- EXTRAIT DU CATALOGUE (fiche gallery) ---------- */
+/* ---------- MOCKUPS EBOOK ---------- */
+.gallery-row{display:flex;align-items:flex-end;justify-content:center;gap:44px;flex-wrap:wrap;padding-top:8px;}
+.gal-book{width:198px;height:280px;border-radius:4px 10px 10px 4px;background:linear-gradient(155deg,var(--navy) 0%, var(--navy-deep) 100%);padding:22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow-lg);position:relative;transform:rotate(-3deg) translateY(10px);}
+.gal-book::after{content:'';position:absolute;right:-6px;top:5px;bottom:5px;width:10px;background:repeating-linear-gradient(180deg,#EDE6D2 0 2px, #DED2AE 2px 3px);border-radius:0 5px 5px 0;box-shadow:2px 0 4px rgba(0,0,0,0.12);}
+.gal-book .gb-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-pale);}
+.gal-book .gb-title{font-family:'Newsreader',serif;color:#F5F1E4;font-size:18.5px;line-height:1.26;margin-top:8px;}
+.gal-book .gb-bottom{display:flex;justify-content:space-between;align-items:flex-end;}
+.gal-book .gb-icon{width:24px;height:24px;color:var(--brass-pale);}
+.gal-book .gb-num{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#C9BCA2;}
+.gal-tablet{width:236px;height:322px;background:var(--navy-deep);border-radius:20px;padding:12px;box-shadow:var(--shadow-lg);}
+.gal-tablet .scr{width:100%;height:100%;border-radius:10px;background:var(--card);padding:26px 22px;display:flex;flex-direction:column;gap:11px;}
+.gal-tablet .ts-title{font-family:'Newsreader',serif;font-size:13.5px;color:var(--wine-deep);margin-bottom:2px;}
+.gal-tablet .ts-line{height:6px;border-radius:3px;background:var(--line);}
+.gal-tablet .ts-line.w1{width:90%;}
+.gal-tablet .ts-line.w2{width:72%;}
+.gal-tablet .ts-line.w3{width:82%;}
+.gal-tablet .ts-chip{margin-top:10px;padding:7px 11px;border-radius:8px;background:var(--wine-pale);color:var(--wine-deep);font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;width:fit-content;}
+.gal-phone{width:142px;height:284px;background:var(--navy-deep);border-radius:26px;padding:9px;box-shadow:var(--shadow-lg);transform:rotate(3deg) translateY(6px);}
+.gal-phone .scr{width:100%;height:100%;border-radius:18px;background:linear-gradient(165deg,var(--wine),var(--brass-deep));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#F7EBD4;text-align:center;padding:16px;}
+.gal-phone .scr .icon{width:28px;height:28px;}
+.gal-phone .scr span{font-family:'Newsreader',serif;font-size:12px;line-height:1.3;}
+@media(max-width:700px){.gal-book,.gal-tablet,.gal-phone{transform:none;}}
+
+/* ---------- EXTRAIT DU CATALOGUE ---------- */
 .fiche-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid var(--line);padding-top:52px;}
 .fiche-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:0;box-shadow:var(--shadow-sm);overflow:hidden;transition:transform .25s ease, box-shadow .25s ease;}
 .fiche-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-.fiche-perf{height:16px;background-image:radial-gradient(circle, var(--paper-alt) 3px, transparent 3px);background-size:14px 14px;background-position:4px center;border-bottom:1px dashed var(--line);}
+.fiche-perf{height:16px;background-image:radial-gradient(circle, var(--paper-alt) 3px, transparent 3px);background-size:14px 14px;background-position:4px center;border-bottom:1px solid var(--line);}
 .fiche-body{padding:26px 24px 28px;}
 .fiche-body .fc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
 .fiche-body .fc-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-deep);font-weight:600;letter-spacing:.04em;}
@@ -253,57 +263,67 @@ header.site-nav{
 .toc-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);padding:14px;box-shadow:var(--shadow-md);}
 .toc-inner{border:1px solid var(--line);border-radius:calc(var(--radius-l) - 10px);padding:46px 42px;}
 .toc-inner .toc-label{font-family:'IBM Plex Mono',monospace;color:var(--wine-deep);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:28px;}
-.toc-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line);}
+.toc-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-soft);}
 .toc-row:last-child{border-bottom:none;}
 .toc-row .tc-num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);flex:none;width:34px;font-weight:600;}
 .toc-row .tc-name{font-size:15.5px;font-weight:500;flex:1;}
-.toc-row .tc-page{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);}
+.toc-row .tc-range{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-faint);white-space:nowrap;}
 @media(max-width:860px){.toc-wrap{grid-template-columns:1fr;}}
 
-/* ---------- POUR QUI ---------- */
-.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.who-col{padding:44px 40px;}
-.who-col.yes{border-right:1px solid var(--line);}
-.who-col h3{font-size:19px;margin-bottom:24px;display:flex;align-items:center;gap:10px;font-weight:500;}
-.who-col.yes h3{color:var(--wine-deep);}
-.who-col.no h3{color:var(--ink-soft);}
-.who-col li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;font-size:15px;}
-.who-col .icon{flex:none;margin-top:2px;}
-.who-col.yes .icon{color:var(--wine-deep);}
-.who-col.no .icon{color:var(--ink-faint);}
-.who-note{text-align:center;color:var(--ink-soft);font-size:15px;margin-top:30px;}
-@media(max-width:760px){.who-grid{grid-template-columns:1fr;}.who-col.yes{border-right:none;border-bottom:1px solid var(--line);}}
+/* ---------- POUR QUI (v2, premium cards) ---------- */
+.who-grid-v2{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.who-card{border-radius:var(--radius-l);padding:42px 38px;border:1px solid var(--line);}
+.who-card.yes{background:linear-gradient(168deg, var(--wine-pale) 0%, var(--card) 62%);border-color:rgba(140,59,62,0.22);box-shadow:var(--shadow-md);}
+.who-card.no{background:var(--paper-alt);box-shadow:var(--shadow-sm);}
+.who-card-head{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+.who-card-head .who-icon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;}
+.who-card.yes .who-icon{background:var(--wine-deep);color:#fff;}
+.who-card.no .who-icon{background:var(--ink-faint);color:#fff;}
+.who-card h3{font-size:20px;font-weight:500;}
+.who-card li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;font-size:15px;border-bottom:1px solid rgba(30,37,48,0.07);}
+.who-card li:last-child{border-bottom:none;}
+.who-card .li-icon{flex:none;width:23px;height:23px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.who-card.yes .li-icon{background:rgba(140,59,62,0.13);color:var(--wine-deep);}
+.who-card.no .li-icon{background:rgba(30,37,48,0.08);color:var(--ink-faint);}
+.who-note{text-align:center;color:var(--ink-soft);font-size:15px;margin-top:34px;}
+@media(max-width:760px){.who-grid-v2{grid-template-columns:1fr;}}
 
-/* ---------- AUTEURE ---------- */
+/* ---------- AUTEUR (anonyme) ---------- */
 .author-wrap{display:grid;grid-template-columns:0.7fr 1.3fr;gap:64px;align-items:center;}
-.author-photo{border-radius:var(--radius-l);overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow-lg);position:relative;}
-.author-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(0.92);}
-.author-quote{position:absolute;bottom:0;left:0;right:0;padding:26px 22px;background:linear-gradient(0deg, rgba(30,37,48,0.82), transparent);color:#F7F4EC;font-family:'Newsreader',serif;font-style:italic;font-size:14px;}
+.author-badge{position:relative;border-radius:var(--radius-l);border:1px solid var(--line);background:var(--paper-alt);aspect-ratio:3/4;box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 30px;text-align:center;}
+.author-badge .ab-print{position:absolute;top:-30px;right:-30px;width:220px;height:220px;color:var(--ink);opacity:0.05;}
+.author-badge .ab-mono{width:96px;height:96px;border-radius:50%;background:var(--navy);color:var(--brass-pale);display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:30px;font-weight:500;margin-bottom:22px;position:relative;z-index:1;box-shadow:var(--shadow-md);}
+.author-badge .ab-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;position:relative;z-index:1;}
+.author-badge .ab-name{font-family:'Newsreader',serif;font-size:19px;color:var(--ink);margin-bottom:18px;position:relative;z-index:1;}
+.author-badge .ab-quote{font-family:'Newsreader',serif;font-style:italic;font-size:13.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:16px;position:relative;z-index:1;}
 .author-copy .sig{font-family:'Newsreader',serif;font-size:17px;color:var(--wine-deep);margin-top:24px;font-style:italic;}
 .credential-row{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap;}
 .credential-row div{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-soft);}
 .credential-row .icon{color:var(--brass-deep);}
-@media(max-width:860px){.author-wrap{grid-template-columns:1fr;}.author-photo{max-width:320px;}}
+@media(max-width:860px){.author-wrap{grid-template-columns:1fr;}.author-badge{max-width:320px;}}
 
 /* ---------- METHODE ---------- */
 .method-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
-.method-row::before{content:'';position:absolute;top:27px;left:10%;right:10%;height:1px;background:repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 16px);z-index:0;}
+.method-row::before{content:'';position:absolute;top:27px;left:10%;right:10%;height:1px;background:var(--line);z-index:0;}
 .method-step{position:relative;z-index:1;text-align:center;padding:0 26px;}
 .method-step .m-dot{width:56px;height:56px;border-radius:50%;background:var(--card);border:1.6px solid var(--wine);color:var(--wine-deep);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:var(--shadow-sm);}
 .method-step h3{font-size:19px;margin-bottom:12px;}
 .method-step p{color:var(--ink-soft);font-size:14.5px;max-width:260px;margin:0 auto;}
 @media(max-width:760px){.method-row{grid-template-columns:1fr;gap:44px;}.method-row::before{display:none;}}
 
-/* ---------- TEMOIGNAGES ---------- */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;border-top:1px solid var(--line);padding-top:48px;}
-.testi-card{display:flex;flex-direction:column;gap:18px;}
+/* ---------- TEMOIGNAGES (carrousel défilant) ---------- */
+.testi-track-wrap{overflow:hidden;border-top:1px solid var(--line);padding-top:52px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+.testi-track{display:flex;gap:26px;width:max-content;animation:testiScroll 55s linear infinite;}
+.testi-track:hover{animation-play-state:paused;}
+@keyframes testiScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.testi-card{flex:0 0 320px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);padding:26px 24px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow-sm);}
 .testi-stars{display:flex;gap:3px;color:var(--brass-deep);}
-.testi-card p.quote{font-size:15.5px;color:var(--ink);font-family:'Newsreader',serif;font-style:italic;line-height:1.6;max-width:none;}
-.testi-person{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:6px;}
-.testi-person img{width:42px;height:42px;border-radius:50%;object-fit:cover;}
-.testi-person .name{font-weight:600;font-size:14px;}
-.testi-person .role{font-size:12.5px;color:var(--ink-faint);}
-@media(max-width:900px){.testi-grid{grid-template-columns:1fr;gap:40px;}}
+.testi-card p.quote{font-size:14.5px;color:var(--ink);font-family:'Newsreader',serif;font-style:italic;line-height:1.55;max-width:none;}
+.testi-person{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:6px;border-top:1px solid var(--line-soft);}
+.testi-person .tp-mono{width:38px;height:38px;border-radius:50%;background:var(--paper-alt);color:var(--wine-deep);font-family:'Newsreader',serif;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none;}
+.testi-person .name{font-weight:600;font-size:13.5px;}
+.testi-person .role{font-size:12px;color:var(--ink-faint);}
+@media(max-width:700px){.testi-card{flex-basis:280px;}}
 
 /* ---------- BONUS ---------- */
 .bonus-list{border-top:1px solid var(--line);}
@@ -333,7 +353,7 @@ header.site-nav{
 
 /* ---------- GARANTIE ---------- */
 .guarantee{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);padding:52px 58px;box-shadow:var(--shadow-sm);}
-.seal{width:116px;height:116px;border-radius:50%;background:var(--paper-alt);border:1.4px dashed var(--brass);display:flex;align-items:center;justify-content:center;flex:none;position:relative;}
+.seal{width:116px;height:116px;border-radius:50%;background:var(--paper-alt);border:1.4px solid var(--brass);display:flex;align-items:center;justify-content:center;flex:none;position:relative;}
 .seal .icon{color:var(--brass-deep);width:48px;height:48px;stroke-width:1.3;}
 .guarantee h3{font-size:22px;margin-bottom:12px;}
 .guarantee p{color:var(--ink-soft);font-size:15.5px;max-width:640px;}
@@ -369,7 +389,7 @@ header.site-nav{
 .urgency{display:flex;align-items:center;justify-content:center;gap:14px;background:var(--brass-pale);color:var(--brass-deep);padding:16px;border-radius:100px;max-width:640px;margin:0 auto 54px;font-size:14px;font-weight:600;text-align:center;}
 .urgency .icon{flex:none;}
 
-/* ---------- FINAL CTA (light framed, not dark) ---------- */
+/* ---------- FINAL CTA ---------- */
 .final-cta{
   background:var(--card);
   border:1.4px solid var(--ink);
@@ -378,7 +398,7 @@ header.site-nav{
   background-image:radial-gradient(circle, var(--line-soft) 1px, transparent 1px);
   background-size:22px 22px;
 }
-.final-cta .seal-mini{width:64px;height:64px;border-radius:50%;background:var(--paper-alt);border:1.4px dashed var(--brass);display:flex;align-items:center;justify-content:center;margin:0 auto 26px;position:relative;z-index:1;}
+.final-cta .seal-mini{width:64px;height:64px;border-radius:50%;background:var(--paper-alt);border:1.4px solid var(--brass);display:flex;align-items:center;justify-content:center;margin:0 auto 26px;position:relative;z-index:1;}
 .final-cta .seal-mini .icon{color:var(--brass-deep);width:28px;height:28px;}
 .final-cta h2{color:var(--ink);font-size:clamp(27px,3.8vw,42px);max-width:760px;margin:0 auto 22px;position:relative;z-index:1;}
 .final-cta p{color:var(--ink-soft);font-size:17px;max-width:520px;margin:0 auto 36px;position:relative;z-index:1;}
@@ -393,7 +413,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 /* ---------- REVEAL ---------- */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease;}
 .reveal.in{opacity:1;transform:translateY(0);}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}.testi-track{animation:none;}}
 
 @media(max-width:600px){
   .wrap{padding:0 20px;}
@@ -432,22 +452,22 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
   <symbol id="ic-drop" viewBox="0 0 24 24"><path d="M12 2.5c3 4 7 8.6 7 12.6a7 7 0 0 1-14 0c0-4 4-8.6 7-12.6Z"/></symbol>
   <symbol id="ic-mute" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m6.5 6.5 11 11"/></symbol>
   <symbol id="ic-scale" viewBox="0 0 24 24"><path d="M12 3v18M6 7l-3.5 7a3.5 3.5 0 0 0 7 0Zm12 0-3.5 7a3.5 3.5 0 0 0 7 0Z"/><path d="M5 21h14M6 7h12"/></symbol>
+  <symbol id="ic-pages" viewBox="0 0 24 24"><path d="M4 5.4C4 4.6 4.6 4 5.4 4H11v16H5.4A1.4 1.4 0 0 1 4 18.6Z"/><path d="M20 5.4c0-.8-.6-1.4-1.4-1.4H13v16h5.6a1.4 1.4 0 0 0 1.4-1.4Z"/></symbol>
 </defs>
 </svg>
 
 <!-- ================= NAV ================= -->
 <header class="site-nav">
   <div class="nav-inner">
-    <div class="brand"><svg class="icon"><use href="#ic-magnifier"/></svg> Le Dossier</div>
+    <div class="brand"><svg class="icon"><use href="#ic-magnifier"/></svg> Démasquer</div>
     <nav class="nav-links">
       <a href="#probleme">Le problème</a>
       <a href="#catalogue">Le catalogue</a>
-      <a href="#auteure">L'auteure</a>
+      <a href="#auteur">L'auteur</a>
       <a href="#avis">Avis</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <span class="nav-price">Dès <strong>2 999 FCFA</strong></span>
       <a href="#offre" class="btn btn-primary">Je le veux</a>
     </div>
   </div>
@@ -471,18 +491,17 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
       </ul>
     </div>
     <div class="hero-visual">
-      <div class="catalog-box">
-        <div class="fiche-back f1"></div>
-        <div class="fiche-back f2"></div>
-        <div class="fiche-main">
-          <div class="fm-holes"><span></span><span></span><span></span><span></span><span></span></div>
-          <div class="fm-num">RUSE Nº07</div>
-          <div class="fm-icon"><svg class="icon icon-sm"><use href="#ic-heart"/></svg></div>
-          <h4>Le bombardement affectif</h4>
-          <div class="fm-tag"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-tag"/></svg> famille : séduction</div>
-        </div>
-        <div class="badge-float"><span class="dot"></span> +2 400 lectrices &amp; lecteurs</div>
-        <div class="tag-float"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-fingerprint"/></svg> 50 fiches classées</div>
+      <div class="hero-photo-frame">
+        <img src="https://images.pexels.com/photos/6390/model-wooden-toy-pressure.jpg?auto=compress&cs=tinysrgb&w=1000" alt="Marionette contrôlée par des fils, représentation de la manipulation">
+        <div class="tint"></div>
+        <div class="tint2"></div>
+      </div>
+      <div class="badge-float"><span class="dot"></span> +2 400 lectrices &amp; lecteurs</div>
+      <div class="fiche-float">
+        <div class="ff-num">RUSE Nº07</div>
+        <div class="ff-icon"><svg class="icon icon-sm"><use href="#ic-heart"/></svg></div>
+        <h4>Le bombardement affectif</h4>
+        <div class="ff-tag"><svg class="icon icon-sm" style="width:12px;height:12px;"><use href="#ic-tag"/></svg> famille : séduction</div>
       </div>
     </div>
   </div>
@@ -491,10 +510,10 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 <!-- ================= STAT STRIP ================= -->
 <section class="stat-strip">
   <div class="wrap">
-    <div class="stat-item"><div class="num">50</div><div class="lbl">ruses répertoriées et expliquées</div></div>
-    <div class="stat-item"><div class="num">5</div><div class="lbl">familles de manipulation</div></div>
-    <div class="stat-item"><div class="num">68</div><div class="lbl">pages, sans blabla</div></div>
-    <div class="stat-item"><div class="num">2h30</div><div class="lbl">pour tout reconnaître</div></div>
+    <div class="stat-item"><div class="si-icon"><svg class="icon icon-sm"><use href="#ic-magnifier"/></svg></div><div class="num">50</div><div class="lbl">ruses répertoriées et expliquées</div></div>
+    <div class="stat-item"><div class="si-icon"><svg class="icon icon-sm"><use href="#ic-tag"/></svg></div><div class="num">5</div><div class="lbl">familles de manipulation</div></div>
+    <div class="stat-item"><div class="si-icon"><svg class="icon icon-sm"><use href="#ic-pages"/></svg></div><div class="num">68</div><div class="lbl">pages, sans blabla</div></div>
+    <div class="stat-item"><div class="si-icon"><svg class="icon icon-sm"><use href="#ic-clock"/></svg></div><div class="num">2h30</div><div class="lbl">pour tout reconnaître</div></div>
   </div>
 </section>
 
@@ -552,7 +571,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
   </div>
 </section>
 
-<!-- ================= LES 5 FAMILLES (dossier frame, signature) ================= -->
+<!-- ================= LES 5 FAMILLES ================= -->
 <section class="section" style="padding-bottom:64px;">
   <div class="dossier-frame reveal">
     <div class="dossier-grid">
@@ -593,8 +612,47 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
   </div>
 </section>
 
+<!-- ================= MOCKUPS EBOOK ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">Disponible partout</div>
+      <h2>Lisez-le où vous voulez, quand vous voulez</h2>
+      <p>Livré en PDF haute définition et EPUB, compatible liseuse, tablette, téléphone et ordinateur.</p>
+    </div>
+    <div class="gallery-row reveal">
+      <div class="gal-book">
+        <div>
+          <span class="gb-eyebrow">Le dossier</span>
+          <div class="gb-title">Les 50 Ruses des Manipulateurs Toxiques</div>
+        </div>
+        <div class="gb-bottom">
+          <span class="gb-num">50 fiches</span>
+          <svg class="icon gb-icon"><use href="#ic-magnifier"/></svg>
+        </div>
+      </div>
+      <div class="gal-tablet">
+        <div class="scr">
+          <span class="ts-title">Chapitre 3</span>
+          <div class="ts-line w1"></div>
+          <div class="ts-line w2"></div>
+          <div class="ts-line w3"></div>
+          <div class="ts-line w2"></div>
+          <span class="ts-chip">RUSE Nº14 — culpabilisation</span>
+        </div>
+      </div>
+      <div class="gal-phone">
+        <div class="scr">
+          <svg class="icon"><use href="#ic-fingerprint"/></svg>
+          <span>50 fiches<br>numérotées</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= EXTRAIT DU CATALOGUE ================= -->
-<section class="section" id="catalogue">
+<section class="section section-alt" id="catalogue">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Extrait du catalogue</div>
@@ -679,7 +737,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 </section>
 
 <!-- ================= TABLE DES MATIERES ================= -->
-<section class="section section-alt">
+<section class="section">
   <div class="wrap">
     <div class="toc-wrap">
       <div class="reveal">
@@ -691,13 +749,13 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
       <div class="toc-card reveal">
         <div class="toc-inner">
           <div class="toc-label">Sommaire</div>
-          <div class="toc-row"><span class="tc-num">01</span><span class="tc-name">Pourquoi une ruse fonctionne toujours au moins une fois</span><span class="tc-page">p. 6</span></div>
-          <div class="toc-row"><span class="tc-num">02</span><span class="tc-name">Les 10 ruses de séduction</span><span class="tc-page">p. 12</span></div>
-          <div class="toc-row"><span class="tc-num">03</span><span class="tc-name">Les 10 ruses de culpabilisation</span><span class="tc-page">p. 22</span></div>
-          <div class="toc-row"><span class="tc-num">04</span><span class="tc-name">Les 10 ruses de contrôle</span><span class="tc-page">p. 32</span></div>
-          <div class="toc-row"><span class="tc-num">05</span><span class="tc-name">Les 10 ruses de déni et de fuite</span><span class="tc-page">p. 42</span></div>
-          <div class="toc-row"><span class="tc-num">06</span><span class="tc-name">Les 10 ruses de position et de victimisation</span><span class="tc-page">p. 52</span></div>
-          <div class="toc-row"><span class="tc-num">07</span><span class="tc-name">Se reconstruire, ne plus se faire piéger</span><span class="tc-page">p. 62</span></div>
+          <div class="toc-row"><span class="tc-num">01</span><span class="tc-name">Pourquoi une ruse fonctionne toujours au moins une fois</span></div>
+          <div class="toc-row"><span class="tc-num">02</span><span class="tc-name">Les 10 ruses de séduction</span><span class="tc-range">Nº01–10</span></div>
+          <div class="toc-row"><span class="tc-num">03</span><span class="tc-name">Les 10 ruses de culpabilisation</span><span class="tc-range">Nº11–20</span></div>
+          <div class="toc-row"><span class="tc-num">04</span><span class="tc-name">Les 10 ruses de contrôle</span><span class="tc-range">Nº21–30</span></div>
+          <div class="toc-row"><span class="tc-num">05</span><span class="tc-name">Les 10 ruses de déni et de fuite</span><span class="tc-range">Nº31–40</span></div>
+          <div class="toc-row"><span class="tc-num">06</span><span class="tc-name">Les 10 ruses de position et de victimisation</span><span class="tc-range">Nº41–50</span></div>
+          <div class="toc-row"><span class="tc-num">07</span><span class="tc-name">Se reconstruire, ne plus se faire piéger</span></div>
         </div>
       </div>
     </div>
@@ -705,29 +763,35 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 </section>
 
 <!-- ================= POUR QUI ================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow" style="justify-content:center;">Est-ce pour vous ?</div>
       <h2>Un dossier pensé pour tout le monde</h2>
       <p>Quelle que soit la relation concernée — famille, couple, amitié, travail — les ruses répertoriées restent les mêmes.</p>
     </div>
-    <div class="who-grid reveal">
-      <div class="who-col yes">
-        <h3><svg class="icon"><use href="#ic-check"/></svg> Ce dossier est pour vous si…</h3>
+    <div class="who-grid-v2 reveal">
+      <div class="who-card yes">
+        <div class="who-card-head">
+          <span class="who-icon"><svg class="icon icon-sm"><use href="#ic-check"/></svg></span>
+          <h3>Ce dossier est pour vous si…</h3>
+        </div>
         <ul>
-          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous sortez d'une relation difficile, ou vous êtes encore dedans.</span></li>
-          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous voulez des repères concrets, pas juste de la théorie.</span></li>
-          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous voulez apprendre à repérer les signaux tôt, la prochaine fois.</span></li>
-          <li><svg class="icon icon-sm"><use href="#ic-check"/></svg><span>Vous préférez un format classé, direct, consultable en un clin d'œil.</span></li>
+          <li><span class="li-icon"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-check"/></svg></span><span>Vous sortez d'une relation difficile, ou vous êtes encore dedans.</span></li>
+          <li><span class="li-icon"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-check"/></svg></span><span>Vous voulez des repères concrets, pas juste de la théorie.</span></li>
+          <li><span class="li-icon"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-check"/></svg></span><span>Vous voulez apprendre à repérer les signaux tôt, la prochaine fois.</span></li>
+          <li><span class="li-icon"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-check"/></svg></span><span>Vous préférez un format classé, direct, consultable en un clin d'œil.</span></li>
         </ul>
       </div>
-      <div class="who-col no">
-        <h3><svg class="icon"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg> Ce dossier n'est pas pour vous si…</h3>
+      <div class="who-card no">
+        <div class="who-card-head">
+          <span class="who-icon"><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg></span>
+          <h3>Ce dossier n'est pas pour vous si…</h3>
+        </div>
         <ul>
-          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous cherchez un diagnostic médical ou une thérapie de fond.</span></li>
-          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous voulez un roman ou un témoignage narratif.</span></li>
-          <li><svg class="icon icon-sm"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg><span>Vous n'êtes pas prêt·e à remettre en question certaines relations.</span></li>
+          <li><span class="li-icon"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg></span><span>Vous cherchez un diagnostic médical ou une thérapie de fond.</span></li>
+          <li><span class="li-icon"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg></span><span>Vous voulez un roman ou un témoignage narratif.</span></li>
+          <li><span class="li-icon"><svg class="icon icon-sm" style="width:13px;height:13px;"><use href="#ic-plus" style="transform:rotate(45deg)"/></svg></span><span>Vous n'êtes pas prêt·e à remettre en question certaines relations.</span></li>
         </ul>
       </div>
     </div>
@@ -735,21 +799,24 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
   </div>
 </section>
 
-<!-- ================= AUTEURE ================= -->
-<section class="section section-alt" id="auteure">
+<!-- ================= AUTEUR (anonyme) ================= -->
+<section class="section" id="auteur">
   <div class="wrap">
     <div class="author-wrap">
-      <div class="author-photo reveal">
-        <img src="https://images.pexels.com/photos/3791554/pexels-photo-3791554.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Nadia Kouassi, autrice du dossier">
-        <div class="author-quote">« Une ruse qu'on sait nommer perd la moitié de son pouvoir. »</div>
+      <div class="author-badge reveal">
+        <svg class="icon ab-print" viewBox="0 0 24 24"><use href="#ic-fingerprint"/></svg>
+        <div class="ab-mono">WA</div>
+        <div class="ab-tag">Auteur du dossier</div>
+        <div class="ab-name">Waïd ABDOU</div>
+        <div class="ab-quote">« Une ruse qu'on sait nommer perd la moitié de son pouvoir. »</div>
       </div>
       <div class="author-copy reveal">
-        <div class="eyebrow">L'auteure</div>
-        <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:20px;">Nadia Kouassi</h2>
-        <p style="color:var(--ink-soft);font-size:16.5px;">Consultante en relations interpersonnelles, Nadia accompagne depuis huit ans des personnes qui sortent — ou cherchent à sortir — de relations toxiques. Elle a construit ce catalogue comme l'outil qu'elle aurait aimé avoir plus tôt&nbsp;: méthodique, sans détour, avec une fiche claire pour chaque ruse rencontrée sur le terrain.</p>
-        <p class="sig">— Nadia</p>
+        <div class="eyebrow">L'auteur</div>
+        <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:20px;">Waïd ABDOU</h2>
+        <p style="color:var(--ink-soft);font-size:16.5px;">Consultant en relations interpersonnelles, Waïd accompagne depuis plusieurs années des personnes qui sortent — ou cherchent à sortir — de relations toxiques. Il a construit ce catalogue comme l'outil qu'il aurait aimé avoir plus tôt&nbsp;: méthodique, sans détour, avec une fiche claire pour chaque ruse rencontrée sur le terrain.</p>
+        <p class="sig">— Waïd</p>
         <div class="credential-row">
-          <div><svg class="icon icon-sm"><use href="#ic-shield"/></svg> Consultante certifiée en relations interpersonnelles</div>
+          <div><svg class="icon icon-sm"><use href="#ic-shield"/></svg> Consultant certifié en relations interpersonnelles</div>
           <div><svg class="icon icon-sm"><use href="#ic-users"/></svg> +2 400 personnes accompagnées</div>
         </div>
       </div>
@@ -758,7 +825,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 </section>
 
 <!-- ================= METHODE ================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow" style="justify-content:center;">La méthode</div>
@@ -784,50 +851,23 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
   </div>
 </section>
 
-<!-- ================= TEMOIGNAGES ================= -->
-<section class="section section-alt" id="avis">
+<!-- ================= TEMOIGNAGES (carrousel) ================= -->
+<section class="section" id="avis">
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow" style="justify-content:center;">Ils et elles ont lu</div>
       <h2>Ce qu'en disent les lecteurs</h2>
     </div>
-    <div class="testi-grid reveal">
-      <div class="testi-card">
-        <div class="testi-stars">
-          <svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg>
-        </div>
-        <p class="quote">« La fiche sur le bombardement affectif m'a mis une claque. J'ai enfin compris pourquoi ce début de relation m'avait semblé trop beau pour être vrai. »</p>
-        <div class="testi-person">
-          <img src="https://images.pexels.com/photos/29852896/pexels-photo-29852896.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Aïcha">
-          <div><div class="name">Aïcha, 34 ans</div><div class="role">Lectrice</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">
-          <svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg>
-        </div>
-        <p class="quote">« Je pensais que ça parlait uniquement de couple. En fait ça m'a surtout aidé à comprendre ma relation avec mon manager. Classé, précis, sans blabla. »</p>
-        <div class="testi-person">
-          <img src="https://images.pexels.com/photos/6102858/pexels-photo-6102858.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Karim">
-          <div><div class="name">Karim, 41 ans</div><div class="role">Lecteur</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">
-          <svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg>
-        </div>
-        <p class="quote">« Les réponses suggérées, je les ai littéralement recopiées sur un post-it. Ça a changé mes conversations avec ma mère. »</p>
-        <div class="testi-person">
-          <img src="https://images.pexels.com/photos/29540830/pexels-photo-29540830.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Élise">
-          <div><div class="name">Élise, 29 ans</div><div class="role">Lectrice</div></div>
-        </div>
-      </div>
+  </div>
+  <div class="testi-track-wrap reveal">
+    <div class="testi-track" id="testiTrack">
+      <!-- set will be duplicated by script for seamless loop -->
     </div>
   </div>
 </section>
 
 <!-- ================= BONUS ================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow" style="justify-content:center;">En plus du dossier</div>
@@ -854,7 +894,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 </section>
 
 <!-- ================= AVANT / APRES ================= -->
-<section class="section section-alt">
+<section class="section">
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow" style="justify-content:center;">La transformation</div>
@@ -884,7 +924,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 </section>
 
 <!-- ================= GARANTIE ================= -->
-<section class="section">
+<section class="section section-alt">
   <div class="wrap">
     <div class="guarantee reveal">
       <div class="seal"><svg class="icon"><use href="#ic-shield"/></svg></div>
@@ -897,7 +937,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 </section>
 
 <!-- ================= FAQ ================= -->
-<section class="section section-alt" id="faq">
+<section class="section" id="faq">
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow" style="justify-content:center;">Questions fréquentes</div>
@@ -970,8 +1010,8 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
 <footer>
   <div class="wrap">
     <div class="footer-inner">
-      <div class="brand"><svg class="icon"><use href="#ic-magnifier"/></svg> Le Dossier</div>
-      <div class="footer-legal">© 2026 Le Dossier Éditions — Tous droits réservés</div>
+      <div class="brand"><svg class="icon"><use href="#ic-magnifier"/></svg> Démasquer</div>
+      <div class="footer-legal">© 2026 Démasquer Éditions — Tous droits réservés</div>
     </div>
   </div>
 </footer>
@@ -990,6 +1030,33 @@ document.querySelectorAll('.faq-item').forEach(item=>{
     if(!wasOpen) item.classList.add('open');
   });
 });
+
+/* Testimonials carousel — build 8 cards, duplicate for seamless loop */
+const testimonials = [
+  {init:'A', name:'Aïcha, 34 ans', role:'Lectrice', quote:"La fiche sur le bombardement affectif m'a mis une claque. J'ai enfin compris pourquoi ce début de relation m'avait semblé trop beau pour être vrai."},
+  {init:'K', name:'Karim, 41 ans', role:'Lecteur', quote:"Je pensais que ça parlait uniquement de couple. En fait ça m'a surtout aidé à comprendre ma relation avec mon manager. Classé, précis, sans blabla."},
+  {init:'É', name:'Élise, 29 ans', role:'Lectrice', quote:"Les réponses suggérées, je les ai littéralement recopiées sur un post-it. Ça a changé mes conversations avec ma mère."},
+  {init:'F', name:'Fatou, 37 ans', role:'Lectrice', quote:"La fiche sur le déni systématique décrit exactement ce que je vivais. Rien que de mettre un nom dessus m'a fait un bien fou."},
+  {init:'J', name:'Julien, 45 ans', role:'Lecteur', quote:"La ruse Nº45, la victime parfaite, c'est très exactement mon beau-père. Je ne me sens plus fou de le remarquer maintenant."},
+  {init:'S', name:'Sarah, 26 ans', role:'Lectrice', quote:"Le triangle de culpabilité expliqué en deux pages, plus clair que trois ans de discussions avec mes amies sur le sujet."},
+  {init:'M', name:'Moussa, 33 ans', role:'Lecteur', quote:"J'ai retrouvé un collègue dans au moins cinq fiches de la famille contrôle. Utile pour remettre les choses à leur place au travail."},
+  {init:'N', name:'Nadia, 52 ans', role:'Lectrice', quote:"Un classement clair, sans jugement, qui permet de relire sa propre histoire familiale avec un peu de recul enfin."}
+];
+const track = document.getElementById('testiTrack');
+function cardHTML(t){
+  return `<div class="testi-card">
+    <div class="testi-stars">
+      <svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg><svg class="icon icon-sm"><use href="#ic-star"/></svg>
+    </div>
+    <p class="quote">« ${t.quote} »</p>
+    <div class="testi-person">
+      <div class="tp-mono">${t.init}</div>
+      <div><div class="name">${t.name}</div><div class="role">${t.role}</div></div>
+    </div>
+  </div>`;
+}
+const html = testimonials.map(cardHTML).join('');
+track.innerHTML = html + html;
 </script>
 
 </body>
