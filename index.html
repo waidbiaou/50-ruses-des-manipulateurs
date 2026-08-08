@@ -296,7 +296,8 @@ header.site-nav{
 .author-wrap{display:grid;grid-template-columns:0.7fr 1.3fr;gap:64px;align-items:center;}
 .author-badge{position:relative;border-radius:var(--radius-l);border:1px solid var(--line);background:var(--paper-alt);aspect-ratio:3/4;box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 30px;text-align:center;}
 .author-badge .ab-print{position:absolute;top:-30px;right:-30px;width:220px;height:220px;color:var(--ink);opacity:0.05;}
-.author-badge .ab-mono{width:96px;height:96px;border-radius:50%;background:var(--navy);color:var(--brass-pale);display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:30px;font-weight:500;margin-bottom:22px;position:relative;z-index:1;box-shadow:var(--shadow-md);}
+.author-badge .ab-avatar{width:104px;height:104px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:22px;position:relative;z-index:1;box-shadow:var(--shadow-md);overflow:hidden;}
+.author-badge .ab-avatar svg{width:100%;height:100%;}
 .author-badge .ab-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;position:relative;z-index:1;}
 .author-badge .ab-name{font-family:'Newsreader',serif;font-size:19px;color:var(--ink);margin-bottom:18px;position:relative;z-index:1;}
 .author-badge .ab-quote{font-family:'Newsreader',serif;font-style:italic;font-size:13.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:16px;position:relative;z-index:1;}
@@ -498,7 +499,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
       <p class="lead">Un catalogue clair et méthodique des tactiques de manipulation les plus courantes — pour les reconnaître dès les premiers signaux, comprendre comment elles fonctionnent, et ne plus jamais vous laisser piéger sans le savoir.</p>
       <div class="hero-cta-row">
         <a href="#offre" class="btn btn-primary">Consulter le dossier <svg class="icon icon-sm"><use href="#ic-arrow-right"/></svg></a>
-        <div class="price-tag"><span class="old">5 999 FCFA</span><span class="new">2 999 FCFA · Édition de lancement</span></div>
+        <div class="price-tag"><span class="old">5 999 FCFA</span><span class="new">3 999 FCFA · Édition de lancement</span></div>
       </div>
       <ul class="hero-trust">
         <li><svg class="icon icon-sm"><use href="#ic-check"/></svg> Format PDF + EPUB</li>
@@ -807,7 +808,18 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
     <div class="author-wrap">
       <div class="author-badge reveal">
         <svg class="icon ab-print" viewBox="0 0 24 24"><use href="#ic-fingerprint"/></svg>
-        <div class="ab-mono">WA</div>
+        <div class="ab-avatar">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#26313F"/>
+            <circle cx="50" cy="40" r="18" fill="#EEE1BE"/>
+            <path d="M50 22c-9 0-15 6-15 14 0 3 1 6 2 8 3-2 6-4 6-8 4 3 10 4 15 3 1-2 2-4 2-6 0-8-6-11-10-11Z" fill="#3B2A18"/>
+            <path d="M20 92c2-16 14-26 30-26s28 10 30 26" fill="#8C3B3E"/>
+            <ellipse cx="50" cy="90" rx="34" ry="8" fill="#6E2C2F"/>
+            <circle cx="43" cy="40" r="2.4" fill="#1E2530"/>
+            <circle cx="57" cy="40" r="2.4" fill="#1E2530"/>
+            <path d="M45 48c2 2 8 2 10 0" stroke="#1E2530" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="ab-tag">Auteur du dossier</div>
         <div class="ab-name">Waïd ABDOU</div>
         <div class="ab-quote">« Une ruse qu'on sait nommer perd la moitié de son pouvoir. »</div>
@@ -981,7 +993,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
       <div class="pricing-flag">Édition de lancement</div>
       <div class="pricing-head">
         <h3>Les 50 Ruses des Manipulateurs Toxiques</h3>
-        <div class="pricing-price"><span class="old">5 999 FCFA</span><span class="new">2 999 FCFA</span></div>
+        <div class="pricing-price"><span class="old">5 999 FCFA</span><span class="new">3 999 FCFA</span></div>
         <div class="pricing-sub">Paiement unique · accès à vie</div>
       </div>
       <ul class="pricing-list">
@@ -1004,7 +1016,7 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
     <div class="seal-mini"><svg class="icon"><use href="#ic-fingerprint"/></svg></div>
     <h2>Vous méritez d'y voir clair.</h2>
     <p>Ne laissez pas une ruse de plus passer inaperçue.</p>
-    <a href="#offre" class="btn btn-primary">Obtenir le dossier maintenant — 2 999 FCFA <svg class="icon icon-sm"><use href="#ic-arrow-right"/></svg></a>
+    <a href="#offre" class="btn btn-primary">Obtenir le dossier maintenant — 3 999 FCFA <svg class="icon icon-sm"><use href="#ic-arrow-right"/></svg></a>
   </div>
 </section>
 
