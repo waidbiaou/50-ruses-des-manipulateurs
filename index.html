@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <title>Les 50 Ruses des Manipulateurs Toxiques — Apprenez à les démasquer</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
@@ -155,7 +156,12 @@ header.site-nav{
 .fiche-float h4{font-size:15.5px;line-height:1.28;margin-bottom:10px;}
 .fiche-float .ff-tag{display:flex;align-items:center;gap:6px;font-size:10.5px;font-family:'IBM Plex Mono',monospace;color:var(--ink-faint);border-top:1px solid var(--line);padding-top:10px;}
 @media(max-width:940px){.badge-float,.fiche-float{display:none;}}
-@media(max-width:600px){.hero{padding:140px 0 100px;}}
+@media(max-width:600px){
+  .hero{padding:140px 0 100px;}
+  .hero-cta-row{flex-direction:column;align-items:center;gap:18px;}
+  .hero-cta-row .btn{width:100%;justify-content:center;}
+  .price-tag{align-items:center;text-align:center;}
+}
 
 /* ---------- STAT STRIP (light) ---------- */
 .stat-strip{background:var(--paper-alt);padding:44px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -318,8 +324,8 @@ header.site-nav{
 
 /* ---------- TEMOIGNAGES (carrousel défilant) ---------- */
 .testi-track-wrap{overflow:hidden;border-top:1px solid var(--line);padding-top:52px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
-.testi-track{display:flex;gap:26px;width:max-content;animation:testiScroll 55s linear infinite;}
-.testi-track:hover{animation-play-state:paused;}
+.testi-track{display:flex;gap:26px;width:max-content;animation:testiScroll 110s linear infinite;}
+.testi-track:hover, .testi-track.is-paused{animation-play-state:paused;}
 @keyframes testiScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 .testi-card{flex:0 0 320px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);padding:26px 24px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow-sm);}
 .testi-stars{display:flex;gap:3px;color:var(--brass-deep);}
@@ -371,7 +377,8 @@ header.site-nav{
 .faq-q .icon{flex:none;color:var(--wine);transition:transform .3s ease;}
 .faq-item.open .faq-q .icon{transform:rotate(45deg);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-.faq-a p{padding:0 4px 28px;color:var(--ink-soft);font-size:15px;max-width:680px;}
+.faq-a p{padding:0 4px 28px;color:var(--ink-soft) !important;font-size:15px;max-width:680px;}
+.faq-a p a{color:var(--ink-soft) !important;text-decoration:none !important;}
 .faq-item.open .faq-a{max-height:220px;}
 
 /* ---------- PRICING ---------- */
@@ -426,6 +433,11 @@ footer{padding:64px 0 44px;border-top:1px solid var(--line);}
   .toc-inner{padding:34px 24px;}
   .guarantee, .pricing-card{padding:36px 26px;}
   .dossier-frame{padding:48px 22px;}
+  .btn{white-space:normal;text-align:center;justify-content:center;}
+  .final-cta .btn-primary,
+  .dossier-frame .btn-ghost,
+  .toc-wrap .btn-ghost{width:100%;}
+  .final-cta{margin:0 16px;padding:64px 24px;}
 }
 </style>
 </head>
@@ -1071,6 +1083,14 @@ function cardHTML(t){
 }
 const html = testimonials.map(cardHTML).join('');
 track.innerHTML = html + html;
+
+/* Robust pause: works for mouse hover and for touch (tap a card to pause, tap elsewhere to resume) */
+track.addEventListener('mouseenter', ()=> track.classList.add('is-paused'));
+track.addEventListener('mouseleave', ()=> track.classList.remove('is-paused'));
+track.addEventListener('touchstart', ()=> track.classList.add('is-paused'), {passive:true});
+document.addEventListener('touchstart', (e)=>{
+  if(!track.contains(e.target)) track.classList.remove('is-paused');
+}, {passive:true});
 </script>
 
 </body>
